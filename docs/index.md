@@ -5,7 +5,20 @@ layout: default
 <img src="{{ '/assets/banner.png' | relative_url }}" alt="PyOrchestrator" class="banner" width="1280" height="640" loading="eager">
 
 <div class="hero">
-  <span class="hero-badge">v0.1.0 · первый релиз · MIT</span>
+  <div class="hero-badges">
+    <a href="https://github.com/{{ site.github_org }}/{{ site.github_repo }}/actions/workflows/ci.yml" target="_blank" rel="noopener">
+      <img src="https://github.com/{{ site.github_org }}/{{ site.github_repo }}/actions/workflows/ci.yml/badge.svg" alt="CI" width="88" height="20">
+    </a>
+    <a href="https://github.com/{{ site.github_org }}/{{ site.github_repo }}/releases/tag/v0.1.0" target="_blank" rel="noopener">
+      <img src="https://img.shields.io/github/v/release/{{ site.github_org }}/{{ site.github_repo }}?label=release&amp;color=22d3ee" alt="Release v0.1.0" width="88" height="20">
+    </a>
+    <a href="https://github.com/{{ site.github_org }}/{{ site.github_repo }}/blob/main/LICENSE" target="_blank" rel="noopener">
+      <img src="https://img.shields.io/badge/License-MIT-cyan.svg" alt="MIT License" width="88" height="20">
+    </a>
+    <a href="{{ '/' | relative_url }}">
+      <img src="https://img.shields.io/badge/docs-GitHub%20Pages-22d3ee" alt="GitHub Pages" width="120" height="20">
+    </a>
+  </div>
   <p class="hero-lead">
     SCADA/CMS-платформа управления для тысяч изолированных Python-скриптов и ботов —
     один Runtime Engine, множество sandbox, без отдельного контейнера на скрипт.
