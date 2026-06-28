@@ -345,6 +345,8 @@ class SystemCounts(BaseModel):
 class SystemConfigInfo(BaseModel):
     runtime_queue: str
     minio_bucket: str
+    minio_endpoint: str
+    minio_console_url: str
     cors_origins: list[str]
 
 

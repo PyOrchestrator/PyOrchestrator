@@ -79,6 +79,7 @@ async def create_backup(db: AsyncSession, user_id: UUID | None, backup_type: str
 
         data = buf.getvalue()
         path = f"backups/{backup.id}/snapshot.tar.gz"
+        storage_service.ensure_bucket()
         storage_service.client.put_object(settings.minio_bucket, path, BytesIO(data), len(data))
 
         backup.storage_path = path

@@ -1,6 +1,7 @@
 """PyOrchestrator Backend API."""
 
 from contextlib import asynccontextmanager
+import asyncio
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -18,7 +19,7 @@ from app.models.run import BackupSettings
 from app.models.script import Script, ScriptTemplate
 from app.models.user import Group, User
 from app.seed.demo_scripts import DEMO_SCRIPTS, DEMO_TEMPLATES
-from app.services.script_service import create_script
+from app.services.script_service import create_script, storage_service
 from app.ws.logs import router as ws_router
 
 
@@ -27,6 +28,10 @@ async def lifespan(app: FastAPI):
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
         await apply_schema_patches(conn)
+    try:
+        await asyncio.to_thread(storage_service.ensure_bucket)
+    except Exception:
+        pass
     await seed_data()
     yield
     await engine.dispose()

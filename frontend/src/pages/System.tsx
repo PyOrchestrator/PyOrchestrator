@@ -26,6 +26,11 @@ interface SystemInfo {
   started_at: string;
   services: Record<string, string>;
   resources: SystemResources;
+  config?: {
+    minio_bucket?: string;
+    minio_endpoint?: string;
+    minio_console_url?: string;
+  };
 }
 
 function formatUptime(seconds: number): string {
@@ -35,6 +40,13 @@ function formatUptime(seconds: number): string {
   if (d > 0) return `${d}d ${h}h`;
   if (h > 0) return `${h}h ${m}m`;
   return `${m}m`;
+}
+
+function formatServiceStatus(status: string): string {
+  if (status === "ok") return "OK";
+  if (status === "configured") return "настроен";
+  if (status.startsWith("error:")) return status.replace(/^error:\s*/, "");
+  return status;
 }
 
 function serviceTone(status: string): BadgeTone {
@@ -180,6 +192,45 @@ export default function SystemPage() {
           />
         </Panel>
 
+        {info?.config?.minio_bucket ? (
+          <Panel
+            className="w-full"
+            title={t("system.cards.storage.title")}
+            subtitle={t("system.cards.storage.subtitle")}
+            bodyClassName="grid grid-cols-1 gap-4 p-5 sm:grid-cols-3 sm:p-6"
+          >
+            <div className="rounded-xl bg-surface-muted/60 p-4 ring-1 ring-ring-line">
+              <p className="text-[0.6875rem] font-semibold uppercase tracking-wider text-faint">
+                {t("system.cards.storage.bucket")}
+              </p>
+              <p className="mt-1 font-mono text-sm text-foreground">{info.config.minio_bucket}</p>
+            </div>
+            <div className="rounded-xl bg-surface-muted/60 p-4 ring-1 ring-ring-line">
+              <p className="text-[0.6875rem] font-semibold uppercase tracking-wider text-faint">
+                {t("system.cards.storage.service")}
+              </p>
+              <p className="mt-1 font-mono text-sm text-foreground">
+                {services.minio ? formatServiceStatus(services.minio) : "—"}
+              </p>
+            </div>
+            {info.config.minio_console_url ? (
+              <div className="rounded-xl bg-surface-muted/60 p-4 ring-1 ring-ring-line">
+                <p className="text-[0.6875rem] font-semibold uppercase tracking-wider text-faint">
+                  {t("system.cards.storage.console")}
+                </p>
+                <a
+                  href={info.config.minio_console_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-1 inline-block text-sm font-medium text-accent hover:underline"
+                >
+                  {info.config.minio_console_url}
+                </a>
+              </div>
+            ) : null}
+          </Panel>
+        ) : null}
+
         <Panel
           className="w-full"
           title={t("system.cards.services.title")}
@@ -193,7 +244,7 @@ export default function SystemPage() {
                 className="flex items-center justify-between gap-3 rounded-xl bg-surface-muted/60 px-4 py-3 ring-1 ring-ring-line"
               >
                 <span className="font-mono text-xs font-semibold uppercase tracking-wide text-muted">{name}</span>
-                <Badge label={status} tone={serviceTone(status)} live={status === "ok"} />
+                <Badge label={formatServiceStatus(status)} tone={serviceTone(status)} live={status === "ok"} />
               </div>
             ))}
           </div>

@@ -1,5 +1,7 @@
 # PyOrchestrator
 
+![PyOrchestrator](docs/assets/banner.png)
+
 [![CI](https://github.com/Developer-RU/pyorchestrator/actions/workflows/ci.yml/badge.svg)](https://github.com/Developer-RU/pyorchestrator/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-cyan.svg)](LICENSE)
 [![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-22d3ee)](https://developer-ru.github.io/pyorchestrator/)

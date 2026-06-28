@@ -89,6 +89,8 @@ export const ru: Messages = {
     description:
       "Управляйте скриптами, расписаниями, sandbox и мониторингом из единой control plane — без контейнера на каждую задачу.",
     signIn: "Вход",
+    submit: "Войти",
+    signingIn: "Вход…",
     subtitle: "Доступ к центру управления",
     demoHint: "admin@pyorchestrator.local · admin",
   },
@@ -499,9 +501,10 @@ export const ru: Messages = {
       },
       storage: {
         title: "Хранилище",
-        subtitle: "Object storage",
-        bucket: "Bucket MinIO",
+        subtitle: "MinIO object storage",
+        bucket: "Bucket",
         service: "Статус MinIO",
+        console: "Консоль MinIO",
       },
       network: {
         title: "Сеть",

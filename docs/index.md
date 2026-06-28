@@ -2,6 +2,8 @@
 layout: default
 ---
 
+<img src="{{ '/assets/banner.png' | relative_url }}" alt="PyOrchestrator" class="banner" width="1280" height="640" loading="eager">
+
 <div class="hero">
   <span class="hero-badge">v0.1.0 · Docker Compose · MIT</span>
   <p class="hero-lead">

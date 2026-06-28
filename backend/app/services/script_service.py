@@ -61,10 +61,31 @@ class StorageService:
             )
         return self._client
 
+    def ensure_bucket(self) -> None:
+        bucket = settings.minio_bucket
+        if not self.client.bucket_exists(bucket):
+            self.client.make_bucket(bucket)
+
+    def check_health(self) -> None:
+        self.ensure_bucket()
+        # Verify read/write access with a tiny probe object.
+        probe_key = ".healthcheck"
+        payload = b"ok"
+        self.client.put_object(settings.minio_bucket, probe_key, BytesIO(payload), len(payload))
+        resp = self.client.get_object(settings.minio_bucket, probe_key)
+        try:
+            if resp.read() != payload:
+                raise RuntimeError("MinIO probe read mismatch")
+        finally:
+            resp.close()
+            resp.release_conn()
+        self.client.remove_object(settings.minio_bucket, probe_key)
+
     def script_prefix(self, script_id: UUID) -> str:
         return f"scripts/{script_id}/"
 
     def put_file(self, script_id: UUID, path: str, data: bytes) -> None:
+        self.ensure_bucket()
         key = f"{self.script_prefix(script_id)}{path}"
         self.client.put_object(settings.minio_bucket, key, BytesIO(data), len(data))
 

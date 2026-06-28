@@ -86,7 +86,9 @@ export const en = {
     headline: "Industrial-grade runtime control for Python automation",
     description:
       "Manage scripts, schedules, sandboxes and observability from a single control plane — without spawning containers per job.",
-    signIn: "Sign in",
+    signIn: "Login",
+    submit: "Login",
+    signingIn: "Signing in…",
     subtitle: "Access the control center",
     demoHint: "admin@pyorchestrator.local · admin",
   },
@@ -497,9 +499,10 @@ export const en = {
       },
       storage: {
         title: "Storage",
-        subtitle: "Object storage",
-        bucket: "MinIO bucket",
+        subtitle: "MinIO object storage",
+        bucket: "Bucket",
         service: "MinIO status",
+        console: "MinIO console",
       },
       network: {
         title: "Network",

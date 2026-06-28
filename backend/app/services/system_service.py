@@ -69,6 +69,19 @@ async def _ping_runtime() -> tuple[str, str]:
         return "runtime", f"error: {exc}"
 
 
+async def _ping_minio() -> tuple[str, str]:
+    def check() -> tuple[str, str]:
+        try:
+            from app.services.script_service import storage_service
+
+            storage_service.check_health()
+            return "minio", "ok"
+        except Exception as exc:
+            return "minio", f"error: {exc}"
+
+    return await asyncio.to_thread(check)
+
+
 async def get_system_info(db: AsyncSession) -> dict:
     now = datetime.now(timezone.utc)
     uptime_sec = int((now - _APP_STARTED_AT).total_seconds())
@@ -79,11 +92,10 @@ async def get_system_info(db: AsyncSession) -> dict:
     except Exception as exc:
         postgres_status = f"error: {exc}"
 
-    service_results = await asyncio.gather(_ping_redis(), _ping_runtime())
+    service_results = await asyncio.gather(_ping_redis(), _ping_runtime(), _ping_minio())
     services = {name: status for name, status in service_results}
     services["postgres"] = postgres_status
     services["backend"] = "ok"
-    services["minio"] = "configured"
 
     counts = {
         "scripts": await db.scalar(select(func.count()).select_from(Script)) or 0,
@@ -123,6 +135,8 @@ async def get_system_info(db: AsyncSession) -> dict:
         "config": {
             "runtime_queue": settings.runtime_queue_key,
             "minio_bucket": settings.minio_bucket,
+            "minio_endpoint": settings.minio_endpoint,
+            "minio_console_url": f"http://localhost:{settings.minio_console_port}",
             "cors_origins": settings.cors_origin_list,
         },
         "resources": _host_resources(),

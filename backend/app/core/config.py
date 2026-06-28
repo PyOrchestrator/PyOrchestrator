@@ -20,6 +20,7 @@ class Settings(BaseSettings):
     minio_secret_key: str = "minioadmin"
     minio_bucket: str = "pyorchestrator"
     minio_secure: bool = False
+    minio_console_port: int = 9001
 
     secret_master_key: str = "change-me-in-production-32chars!!"
     jwt_secret: str = "jwt-dev-secret"
