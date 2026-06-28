@@ -25,6 +25,8 @@ exclude:
 nav:
   - title: Главная
     url: /
+  - title: Заметки о выпуске
+    url: /release-notes/
   - title: Быстрый старт
     url: /getting-started/
   - title: Архитектура

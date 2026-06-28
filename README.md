@@ -3,6 +3,7 @@
 ![PyOrchestrator](docs/assets/banner.png)
 
 [![CI](https://github.com/Developer-RU/pyorchestrator/actions/workflows/ci.yml/badge.svg)](https://github.com/Developer-RU/pyorchestrator/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/Developer-RU/pyorchestrator?label=release&color=22d3ee)](https://github.com/Developer-RU/pyorchestrator/releases/tag/v0.1.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-cyan.svg)](LICENSE)
 [![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-22d3ee)](https://developer-ru.github.io/pyorchestrator/)
 
@@ -37,6 +38,7 @@ PyOrchestrator exposes an [MCP server](mcp/README.md) so Cursor and other agents
 ```bash
 git clone https://github.com/Developer-RU/pyorchestrator.git
 cd pyorchestrator
+git checkout v0.1.0   # first stable release
 cp .env.example .env
 docker compose up --build
 ```
@@ -90,6 +92,7 @@ pyorchestrator/
 
 | Topic | Link |
 |-------|------|
+| Release notes (v0.1.0) | [release-notes](https://developer-ru.github.io/pyorchestrator/release-notes/) |
 | Quick start | [getting-started](https://developer-ru.github.io/pyorchestrator/getting-started/) |
 | Architecture | [architecture](https://developer-ru.github.io/pyorchestrator/architecture/) |
 | Control Plane UI | [control-plane](https://developer-ru.github.io/pyorchestrator/control-plane/) |
@@ -114,14 +117,11 @@ pyorchestrator/
 | Production-2 Scale + OTA | ✅ Stub ready |
 | Production-3 Enterprise | 🔜 Backlog |
 
-## Publishing to GitHub
+## Releases
 
-1. Create organization **pyorchestrator** on GitHub
-2. Create repository **pyorchestrator** (public)
-3. Push this repo: `git remote add origin git@github.com:pyorchestrator/pyorchestrator.git && git push -u origin main`
-4. **Settings → Pages → Build and deployment:** GitHub Actions (workflow `Deploy GitHub Pages`)
-5. Optional: enable Wiki and import pages from `wiki/`
-6. Create release tag `v0.1.0` from [CHANGELOG.md](CHANGELOG.md)
+| Version | Date | Notes |
+|---------|------|-------|
+| [v0.1.0](https://github.com/Developer-RU/pyorchestrator/releases/tag/v0.1.0) | 2026-06-27 | First public release — see [CHANGELOG.md](CHANGELOG.md) and [docs](https://developer-ru.github.io/pyorchestrator/release-notes/) |
 
 ## Contributing
 

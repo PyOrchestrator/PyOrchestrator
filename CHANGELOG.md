@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.1.0] - 2026-06-27
 
+Первый публичный выпуск PyOrchestrator.
+
 ### Added
 
 - Docker Compose stack: backend, frontend, runtime, scheduler, PostgreSQL, Redis, MinIO, Prometheus, Grafana, Loki, MCP
@@ -18,11 +20,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Encrypted per-script secrets vault
 - Manual and scheduled backups with restore
 - OTA update framework stub (`UpdateProvider`, `GitHubUpdateProvider`)
-- GitHub Pages documentation site (`docs/`)
+- GitHub Pages documentation site (`docs/`) — русский язык, sidebar с live-лентой Issues
 - CI: backend compile, frontend build, Docker Compose build
+- Login page redesign (split layout), project banners for README and docs
 
 ### Fixed
 
+- MinIO integration: real health check, `ensure_bucket()`, `minio-init` service, correct System panel status
 - Schedule delete FK violation (`runs.schedule_id` → `ON DELETE SET NULL`)
 - Script stop for queued/cancelled runs and async notification lazy-load
 - Dashboard asset mix label cleanup, MetricsStrip typography

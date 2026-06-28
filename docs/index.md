@@ -5,16 +5,20 @@ layout: default
 <img src="{{ '/assets/banner.png' | relative_url }}" alt="PyOrchestrator" class="banner" width="1280" height="640" loading="eager">
 
 <div class="hero">
-  <span class="hero-badge">v0.1.0 · Docker Compose · MIT</span>
+  <span class="hero-badge">v0.1.0 · первый релиз · MIT</span>
   <p class="hero-lead">
     SCADA/CMS-платформа управления для тысяч изолированных Python-скриптов и ботов —
     один Runtime Engine, множество sandbox, без отдельного контейнера на скрипт.
   </p>
 </div>
 
+> **27 июня 2026** — опубликован [первый релиз v0.1.0](https://github.com/Developer-RU/pyorchestrator/releases/tag/v0.1.0).
+> См. [заметки о выпуске]({{ '/release-notes/' | relative_url }}).
+
 **PyOrchestrator** — платформа для создания, планирования, запуска и мониторинга Python-автоматизации в фиксированном стеке Docker Compose: веб-интерфейс, API, планировщик, изолированный runtime, наблюдаемость и MCP-сервер для AI-агентов.
 
 <p class="quick-links">
+  <a href="{{ '/release-notes/' | relative_url }}">Заметки о выпуске</a> ·
   <a href="{{ '/getting-started/' | relative_url }}">Быстрый старт</a> ·
   <a href="{{ '/architecture/' | relative_url }}">Архитектура</a> ·
   <a href="{{ '/control-plane/' | relative_url }}">Панель управления</a> ·
