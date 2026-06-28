@@ -52,7 +52,7 @@ layout: default
 ## Быстрый старт
 
 ```bash
-git clone https://github.com/pyorchestrator/pyorchestrator.git
+git clone https://github.com/Developer-RU/pyorchestrator.git
 cd pyorchestrator
 cp .env.example .env
 docker compose up --build
@@ -86,4 +86,4 @@ pyorchestrator/
 
 ## Лицензия
 
-[MIT License](https://github.com/pyorchestrator/pyorchestrator/blob/main/LICENSE)
+[MIT License](https://github.com/Developer-RU/pyorchestrator/blob/main/LICENSE)

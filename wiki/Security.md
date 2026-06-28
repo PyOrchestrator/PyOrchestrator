@@ -40,4 +40,4 @@ Runtime и scheduler → backend через `X-Internal-Key: INTERNAL_API_KEY`.
 
 ## Сообщить об уязвимости
 
-См. [SECURITY.md](https://github.com/pyorchestrator/pyorchestrator/blob/main/SECURITY.md) в корне репозитория.
+См. [SECURITY.md](https://github.com/Developer-RU/pyorchestrator/blob/main/SECURITY.md) в корне репозитория.

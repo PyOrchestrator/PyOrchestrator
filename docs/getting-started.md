@@ -13,7 +13,7 @@ description: Установка PyOrchestrator через Docker Compose и пе
 ## Установка
 
 ```bash
-git clone https://github.com/pyorchestrator/pyorchestrator.git
+git clone https://github.com/Developer-RU/pyorchestrator.git
 cd pyorchestrator
 cp .env.example .env
 docker compose up --build

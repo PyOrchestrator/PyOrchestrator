@@ -1,14 +1,14 @@
 # PyOrchestrator
 
-[![CI](https://github.com/pyorchestrator/pyorchestrator/actions/workflows/ci.yml/badge.svg)](https://github.com/pyorchestrator/pyorchestrator/actions/workflows/ci.yml)
+[![CI](https://github.com/Developer-RU/pyorchestrator/actions/workflows/ci.yml/badge.svg)](https://github.com/Developer-RU/pyorchestrator/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-cyan.svg)](LICENSE)
-[![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-22d3ee)](https://pyorchestrator.github.io/pyorchestrator/)
+[![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-22d3ee)](https://developer-ru.github.io/pyorchestrator/)
 
 **SCADA/CMS platform** for creating, scheduling, running, and monitoring thousands of isolated Python scripts and bots — inside a fixed Docker Compose stack.
 
 > One Runtime Engine. Many sandboxes. Zero per-script containers.
 
-**Документация:** https://pyorchestrator.github.io/pyorchestrator/
+**Документация:** https://developer-ru.github.io/pyorchestrator/
 
 ## Architecture
 
@@ -24,7 +24,7 @@
 | `prometheus` + `grafana` + `loki` | Metrics & logs |
 | `mcp` | MCP server for AI agents (port 8010) |
 
-See [Architecture](https://pyorchestrator.github.io/pyorchestrator/architecture/) for full design.
+See [Architecture](https://developer-ru.github.io/pyorchestrator/architecture/) for full design.
 
 ### AI agents (MCP)
 
@@ -33,7 +33,7 @@ PyOrchestrator exposes an [MCP server](mcp/README.md) so Cursor and other agents
 ## Quick Start
 
 ```bash
-git clone https://github.com/pyorchestrator/pyorchestrator.git
+git clone https://github.com/Developer-RU/pyorchestrator.git
 cd pyorchestrator
 cp .env.example .env
 docker compose up --build
@@ -88,17 +88,17 @@ pyorchestrator/
 
 | Topic | Link |
 |-------|------|
-| Quick start | [getting-started](https://pyorchestrator.github.io/pyorchestrator/getting-started/) |
-| Architecture | [architecture](https://pyorchestrator.github.io/pyorchestrator/architecture/) |
-| Control Plane UI | [control-plane](https://pyorchestrator.github.io/pyorchestrator/control-plane/) |
-| Runtime & sandbox | [runtime](https://pyorchestrator.github.io/pyorchestrator/runtime/) |
-| MCP for AI agents | [mcp](https://pyorchestrator.github.io/pyorchestrator/mcp/) |
-| API reference | [api-reference](https://pyorchestrator.github.io/pyorchestrator/api-reference/) |
-| Deployment | [deployment](https://pyorchestrator.github.io/pyorchestrator/deployment/) |
-| Configuration | [configuration](https://pyorchestrator.github.io/pyorchestrator/configuration/) |
-| Security | [security](https://pyorchestrator.github.io/pyorchestrator/security/) |
-| Roadmap | [roadmap](https://pyorchestrator.github.io/pyorchestrator/roadmap/) |
-| Troubleshooting | [troubleshooting](https://pyorchestrator.github.io/pyorchestrator/troubleshooting/) |
+| Quick start | [getting-started](https://developer-ru.github.io/pyorchestrator/getting-started/) |
+| Architecture | [architecture](https://developer-ru.github.io/pyorchestrator/architecture/) |
+| Control Plane UI | [control-plane](https://developer-ru.github.io/pyorchestrator/control-plane/) |
+| Runtime & sandbox | [runtime](https://developer-ru.github.io/pyorchestrator/runtime/) |
+| MCP for AI agents | [mcp](https://developer-ru.github.io/pyorchestrator/mcp/) |
+| API reference | [api-reference](https://developer-ru.github.io/pyorchestrator/api-reference/) |
+| Deployment | [deployment](https://developer-ru.github.io/pyorchestrator/deployment/) |
+| Configuration | [configuration](https://developer-ru.github.io/pyorchestrator/configuration/) |
+| Security | [security](https://developer-ru.github.io/pyorchestrator/security/) |
+| Roadmap | [roadmap](https://developer-ru.github.io/pyorchestrator/roadmap/) |
+| Troubleshooting | [troubleshooting](https://developer-ru.github.io/pyorchestrator/troubleshooting/) |
 
 ## Development Status
 

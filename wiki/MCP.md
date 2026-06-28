@@ -74,4 +74,4 @@ URL: `http://localhost:8010/mcp`
 3. `update_script_file` — patch `main.py`
 4. `run_script` → `get_run_logs` — выполнить и прочитать вывод
 
-Подробнее: [mcp/README.md](https://github.com/pyorchestrator/pyorchestrator/blob/main/mcp/README.md)
+Подробнее: [mcp/README.md](https://github.com/Developer-RU/pyorchestrator/blob/main/mcp/README.md)
