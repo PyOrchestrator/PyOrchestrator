@@ -66,5 +66,5 @@ cd mcp && pip install -e .
 ## Дальше
 
 - [Архитектура](/architecture/)
-- [Control Plane UI](/control-plane/)
+- [Панель управления](/control-plane/)
 - [Безопасность](/security/)

@@ -5,17 +5,17 @@ layout: default
 <div class="hero">
   <span class="hero-badge">v0.1.0 · Docker Compose · MIT</span>
   <p class="hero-lead">
-    SCADA/CMS control plane для тысяч изолированных Python-скриптов и ботов —
+    SCADA/CMS-платформа управления для тысяч изолированных Python-скриптов и ботов —
     один Runtime Engine, множество sandbox, без отдельного контейнера на скрипт.
   </p>
 </div>
 
-**PyOrchestrator** — платформа для создания, планирования, запуска и мониторинга Python-автоматизации в фиксированном стеке Docker Compose: веб-интерфейс, API, планировщик, изолированный runtime, observability и MCP-сервер для AI-агентов.
+**PyOrchestrator** — платформа для создания, планирования, запуска и мониторинга Python-автоматизации в фиксированном стеке Docker Compose: веб-интерфейс, API, планировщик, изолированный runtime, наблюдаемость и MCP-сервер для AI-агентов.
 
 <p class="quick-links">
   <a href="{{ '/getting-started/' | relative_url }}">Быстрый старт</a> ·
   <a href="{{ '/architecture/' | relative_url }}">Архитектура</a> ·
-  <a href="{{ '/control-plane/' | relative_url }}">Control Plane</a> ·
+  <a href="{{ '/control-plane/' | relative_url }}">Панель управления</a> ·
   <a href="{{ '/mcp/' | relative_url }}">MCP</a>
 </p>
 
@@ -23,17 +23,17 @@ layout: default
 
 | Модуль | Описание |
 |--------|----------|
-| **Обзор (Dashboard)** | KPI, объединённые графики активности, состав объектов, health |
-| **Скрипты и боты** | CRUD, multi-file editor (Monaco), import/export, шаблоны |
+| **Обзор** | KPI, объединённые графики активности, состав объектов, состояние сервисов |
+| **Скрипты и боты** | CRUD, многофайловый редактор (Monaco), импорт/экспорт, шаблоны |
 | **Группы** | Организация скриптов по категориям |
-| **Расписания** | Cron, interval, webhook-триггеры |
+| **Расписания** | Cron, интервалы, webhook-триггеры |
 | **Вебхуки** | Внешние HTTP-триггеры |
 | **Runtime** | Subprocess sandbox + venv + rlimits, очередь Redis |
-| **Секреты** | Шифрованное хранилище per-script, инъекция в runtime |
-| **Бэкапы** | Ручные и по расписанию, restore |
-| **Оповещения** | In-app notifications по событиям runs |
-| **Observability** | Prometheus, Grafana, Loki |
-| **MCP** | 24+ tools для Cursor и других AI-агентов |
+| **Секреты** | Шифрованное хранилище на скрипт, инъекция в runtime |
+| **Бэкапы** | Ручные и по расписанию, восстановление |
+| **Оповещения** | In-app уведомления по событиям runs |
+| **Наблюдаемость** | Prometheus, Grafana, Loki |
+| **MCP** | 24+ инструментов для Cursor и других AI-агентов |
 | **RBAC** | Administrator / Developer / Operator / Viewer |
 
 ## Стек
@@ -60,7 +60,7 @@ docker compose up --build
 
 | Сервис | URL |
 |--------|-----|
-| Control Plane UI | http://localhost:5173 |
+| Панель управления | http://localhost:5173 |
 | API + Swagger | http://localhost:8000/docs |
 | Grafana | http://localhost:3000 |
 | Prometheus | http://localhost:9090 |
@@ -74,10 +74,10 @@ docker compose up --build
 ```
 pyorchestrator/
 ├── backend/           # FastAPI — REST, WebSocket, RBAC
-├── frontend/          # React control plane
-├── runtime/           # Sandbox engine
-├── scheduler/         # APScheduler service
-├── mcp/               # MCP server для AI-агентов
+├── frontend/          # React — панель управления
+├── runtime/           # Движок sandbox
+├── scheduler/         # Сервис APScheduler
+├── mcp/               # MCP-сервер для AI-агентов
 ├── infrastructure/    # Prometheus, Grafana, Loki
 ├── docs/              # Документация (GitHub Pages)
 ├── wiki/              # Копия для GitHub Wiki

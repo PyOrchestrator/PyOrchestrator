@@ -4,7 +4,7 @@ title: Схема данных
 description: Модель PostgreSQL — таблицы и связи
 ---
 
-PostgreSQL 16. UUID primary keys. Timestamps `created_at` / `updated_at` на сущностях.
+PostgreSQL 16. Первичные ключи UUID. Метки времени `created_at` / `updated_at` на сущностях.
 
 > **Примечание:** полная ER-диаграмма в репозитории описывает целевую модель. В v0.1 RBAC реализован через enum-роли на `users.role`, без нормализованных таблиц `roles` / `permissions`.
 
@@ -12,22 +12,22 @@ PostgreSQL 16. UUID primary keys. Timestamps `created_at` / `updated_at` на с
 
 | Таблица | Назначение |
 |---------|------------|
-| `users` | Аккаунты, role enum |
+| `users` | Учётные записи, enum роли |
 | `groups` | Группы скриптов |
 | `scripts` | Метаданные скриптов/ботов |
-| `script_files` | Исходники (content в DB + MinIO sync) |
-| `script_secrets` | Encrypted secrets |
+| `script_files` | Исходники (content в БД + sync с MinIO) |
+| `script_secrets` | Зашифрованные секреты |
 | `script_templates` | Шаблоны |
 | `schedules` | Cron / interval / webhook |
-| `webhooks` | Inbound hooks |
+| `webhooks` | Входящие hooks |
 | `runs` | История выполнений |
 | `run_logs` | Строки логов |
-| `run_metrics` | CPU/RAM samples |
-| `notifications` | In-app alerts |
-| `notification_dismissals` | Dismissed alerts |
-| `backups` | Backup metadata |
-| `backup_settings` | Schedule config |
-| `audit_logs` | Audit trail |
+| `run_metrics` | Сэмплы CPU/RAM |
+| `notifications` | In-app оповещения |
+| `notification_dismissals` | Скрытые оповещения |
+| `backups` | Метаданные бэкапов |
+| `backup_settings` | Настройки расписания |
+| `audit_logs` | Журнал аудита |
 
 ## ER (упрощённо)
 
@@ -46,7 +46,7 @@ erDiagram
     users ||--o{ notifications : receives
 ```
 
-## Run statuses
+## Статусы run
 
 `queued` → `running` → `success` | `failed` | `timeout` | `cancelled`
 
@@ -54,7 +54,7 @@ erDiagram
 
 v0.1: `create_all()` при старте + `schema_patches.py` для hotfix FK.
 
-Alembic в roadmap — см. [Roadmap]({{ '/roadmap/' | relative_url }}).
+Alembic — в [дорожной карте]({{ '/roadmap/' | relative_url }}).
 
 ## Полная спецификация
 

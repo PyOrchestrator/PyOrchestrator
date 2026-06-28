@@ -72,5 +72,5 @@ cd mcp && pip install -e .
 ## Дальше
 
 - [Архитектура]({{ '/architecture/' | relative_url }})
-- [Control Plane UI]({{ '/control-plane/' | relative_url }})
+- [Панель управления]({{ '/control-plane/' | relative_url }})
 - [Безопасность]({{ '/security/' | relative_url }})

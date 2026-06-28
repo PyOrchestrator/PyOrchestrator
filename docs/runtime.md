@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Runtime & Sandbox
+title: Runtime и sandbox
 description: Модель изоляции и жизненный цикл выполнения скриптов
 ---
 
@@ -12,8 +12,8 @@ description: Модель изоляции и жизненный цикл вып
 Runtime Engine
 ├── Redis BLPOP runtime:jobs
 ├── SandboxPool (semaphore max_concurrent)
-│   └── Sandbox per run
-│       ├── venv (per workspace)
+│   └── Sandbox на каждый run
+│       ├── venv (на workspace)
 │       ├── subprocess python entrypoint
 │       ├── RLIMIT_CPU / RLIMIT_AS
 │       └── wall-clock timeout
@@ -22,28 +22,28 @@ Runtime Engine
 
 ## Жизненный цикл run
 
-1. **Queue** — backend создаёт `Run` (status `queued`), кладёт job в Redis
-2. **Start** — runtime забирает job, вызывает `/internal/runs/start`
-3. **Execute** — sandbox запускает `entrypoint` с secrets в env (`SECRET_*`)
-4. **Logs** — stdout/stderr → WebSocket + PostgreSQL
-5. **Complete** — exit code, duration → `/internal/runs/complete`
-6. **Stop** — UI публикует `stop` в `run:{id}:control`, SIGTERM процессу
+1. **Очередь** — backend создаёт `Run` (статус `queued`), кладёт job в Redis
+2. **Старт** — runtime забирает job, вызывает `/internal/runs/start`
+3. **Выполнение** — sandbox запускает `entrypoint` с секретами в env (`SECRET_*`)
+4. **Логи** — stdout/stderr → WebSocket + PostgreSQL
+5. **Завершение** — exit code, duration → `/internal/runs/complete`
+6. **Остановка** — UI публикует `stop` в `run:{id}:control`, SIGTERM процессу
 
 ## Изоляция
 
 | Слой | Механизм |
 |------|----------|
-| Process | `subprocess.Popen` |
-| FS | `/workspaces/{script_id}/{run_id}/` |
-| Deps | `pip install -r requirements.txt` в local venv |
-| CPU/Memory | `resource.setrlimit` |
-| Time | `asyncio.wait_for` wall timeout |
-| Secrets | Encrypted at rest, injected at run time |
+| Процесс | `subprocess.Popen` |
+| ФС | `/workspaces/{script_id}/{run_id}/` |
+| Зависимости | `pip install -r requirements.txt` в локальный venv |
+| CPU/память | `resource.setrlimit` |
+| Время | `asyncio.wait_for` wall timeout |
+| Секреты | Шифрование at rest, инъекция при run |
 
 ## Масштабирование
 
 `docker compose -f docker-compose.prod.yml` — несколько реплик `runtime`, общая Redis-очередь.
 
-## Hot reload кода
+## Горячая перезагрузка кода
 
-Сохранение скрипта в UI → Redis `script:updated` → runtime инвалидирует venv cache → следующий run с новым кодом **без перезапуска контейнеров**.
+Сохранение скрипта в UI → Redis `script:updated` → runtime инвалидирует кэш venv → следующий run с новым кодом **без перезапуска контейнеров**.

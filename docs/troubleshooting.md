@@ -17,17 +17,17 @@ docker compose logs postgres
 ## Скрипт не запускается
 
 1. Статус скрипта — `enabled`?
-2. `Max concurrent runs` не исчерпан?
+2. Лимит `max concurrent runs` не исчерпан?
 3. `docker compose logs runtime` — ошибки sandbox?
 4. API: `GET /api/v1/runs/scripts/{id}/runs`
 
-## Stop не работает
+## Остановка не работает
 
-- Run должен быть `running` или `queued`
+- Run должен быть в статусе `running` или `queued`
 - Проверьте Redis: backend и runtime в одной сети
 - Логи backend на `POST /runs/scripts/{id}/stop`
 
-## Frontend: failed to resolve recharts
+## Frontend: не найден пакет recharts
 
 ```bash
 docker compose exec frontend npm install
@@ -41,11 +41,11 @@ curl -s http://localhost:8010/mcp
 docker compose logs mcp
 ```
 
-HTTP `406` — нормально (сервер жив).
+HTTP `406` — нормально (сервер отвечает).
 
 ## Grafana пустая
 
-Datasource provisioning: `infrastructure/grafana/provisioning/`
+Provisioning datasource: `infrastructure/grafana/provisioning/`
 
 Логин: `admin` / `admin` (или из `.env`).
 
@@ -58,10 +58,10 @@ docker compose up --build
 
 **Удалит все данные PostgreSQL и MinIO.**
 
-## Health checks
+## Проверки health
 
-| URL | Expected |
-|-----|----------|
+| URL | Ожидаемый ответ |
+|-----|-----------------|
 | `http://localhost:8000/health` | `{"status":"ok"}` |
 | `http://localhost:9091/health` | runtime |
 | `http://localhost:9092/health` | scheduler |
@@ -72,4 +72,4 @@ docker compose up --build
 docker compose logs -f backend runtime scheduler
 ```
 
-Loki: Grafana → Explore → Loki datasource.
+Loki: Grafana → Explore → источник Loki.

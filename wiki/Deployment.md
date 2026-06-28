@@ -1,4 +1,4 @@
-## Development (default)
+## Разработка (по умолчанию)
 
 ```bash
 cp .env.example .env
@@ -19,8 +19,8 @@ docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
 
 `docker-compose.prod.yml`:
 
-- Frontend — nginx static build
-- Runtime — `RUNTIME_REPLICAS` (default 2)
+- Frontend — статическая сборка через nginx
+- Runtime — `RUNTIME_REPLICAS` (по умолчанию 2)
 - Postgres/Redis — только internal network
 - Prometheus/Grafana — bind `127.0.0.1`
 
@@ -31,7 +31,7 @@ docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
 - [ ] Сменить пароль admin-пользователя
 - [ ] Настроить `CORS_ORIGINS` на реальный домен UI
 - [ ] TLS termination (nginx/traefik перед frontend + API)
-- [ ] Backup schedule в UI
+- [ ] Расписание бэкапов в UI
 - [ ] Ограничить доступ к портам observability
 
 ## Обновление
@@ -41,15 +41,15 @@ git pull
 docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
 ```
 
-OTA через UI (`UpdateProvider`) — stub для GitHub releases в v0.1.
+OTA через UI (`UpdateProvider`) — заглушка для GitHub releases в v0.1.
 
 ## Ресурсы
 
-| Profile | CPU | RAM | Disk |
+| Профиль | CPU | RAM | Диск |
 |---------|-----|-----|------|
-| Minimal | 2 | 4 GB | 20 GB |
-| Recommended | 4 | 8 GB | 50 GB |
-| Heavy (50+ concurrent sandboxes) | 8+ | 16 GB | 100 GB |
+| Минимальный | 2 | 4 GB | 20 GB |
+| Рекомендуемый | 4 | 8 GB | 50 GB |
+| Нагруженный (50+ параллельных sandbox) | 8+ | 16 GB | 100 GB |
 
 ## Публикация в GitHub Organization
 

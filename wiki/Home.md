@@ -1,18 +1,49 @@
-# PyOrchestrator / SCADA CMS
+<div class="hero">
+  <span class="hero-badge">v0.1.0 · Docker Compose · MIT</span>
+  <p class="hero-lead">
+    SCADA/CMS-платформа управления для тысяч изолированных Python-скриптов и ботов —
+    один Runtime Engine, множество sandbox, без отдельного контейнера на скрипт.
+  </p>
+</div>
 
-SCADA/CMS control plane для изолированных Python-скриптов и ботов в Docker Compose.
+**PyOrchestrator** — платформа для создания, планирования, запуска и мониторинга Python-автоматизации в фиксированном стеке Docker Compose: веб-интерфейс, API, планировщик, изолированный runtime, наблюдаемость и MCP-сервер для AI-агентов.
 
-**Документация (GitHub Pages):** https://developer-ru.github.io/pyorchestrator/
+<p class="quick-links">
+  <a href="/getting-started/">Быстрый старт</a> ·
+  <a href="/architecture/">Архитектура</a> ·
+  <a href="/control-plane/">Панель управления</a> ·
+  <a href="/mcp/">MCP</a>
+</p>
 
 ## Возможности
 
-- Скрипты и боты: CRUD, Monaco multi-file editor, import/export, шаблоны
-- Группы, расписания (cron/interval), вебхуки
-- Runtime: subprocess sandbox + venv + rlimits, очередь Redis
-- Секреты (шифрование), бэкапы, in-app notifications
-- Dashboard с KPI и графиками, Prometheus/Grafana/Loki
-- MCP-сервер для AI-агентов (Cursor и др.)
-- RBAC: Administrator / Developer / Operator / Viewer
+| Модуль | Описание |
+|--------|----------|
+| **Обзор** | KPI, объединённые графики активности, состав объектов, состояние сервисов |
+| **Скрипты и боты** | CRUD, многофайловый редактор (Monaco), импорт/экспорт, шаблоны |
+| **Группы** | Организация скриптов по категориям |
+| **Расписания** | Cron, интервалы, webhook-триггеры |
+| **Вебхуки** | Внешние HTTP-триггеры |
+| **Runtime** | Subprocess sandbox + venv + rlimits, очередь Redis |
+| **Секреты** | Шифрованное хранилище на скрипт, инъекция в runtime |
+| **Бэкапы** | Ручные и по расписанию, восстановление |
+| **Оповещения** | In-app уведомления по событиям runs |
+| **Наблюдаемость** | Prometheus, Grafana, Loki |
+| **MCP** | 24+ инструментов для Cursor и других AI-агентов |
+| **RBAC** | Administrator / Developer / Operator / Viewer |
+
+## Стек
+
+| Компонент | Технология |
+|-----------|------------|
+| API | FastAPI 0.115, SQLAlchemy 2, asyncpg, PostgreSQL 16 |
+| UI | React 18, TypeScript, Vite 5, Tailwind CSS 4, Monaco, Recharts |
+| Runtime | Python 3.12, subprocess, venv, psutil, Prometheus |
+| Scheduler | APScheduler 3.10 |
+| Очередь / pub-sub | Redis 7 |
+| Файлы | MinIO (S3-compatible) |
+| MCP | `mcp` SDK, streamable HTTP + stdio |
+| Инфраструктура | Docker Compose |
 
 ## Быстрый старт
 
@@ -23,39 +54,32 @@ cp .env.example .env
 docker compose up --build
 ```
 
-| Интерфейс | URL |
-|-----------|-----|
-| Control Plane UI | http://localhost:5173 |
+| Сервис | URL |
+|--------|-----|
+| Панель управления | http://localhost:5173 |
 | API + Swagger | http://localhost:8000/docs |
 | Grafana | http://localhost:3000 |
-| MCP | http://localhost:8010/mcp |
+| Prometheus | http://localhost:9090 |
+| MinIO Console | http://localhost:9001 |
+| MCP (HTTP) | http://localhost:8010/mcp |
 
-Логин: `admin@pyorchestrator.local` / `admin`
+**Логин по умолчанию:** `admin@pyorchestrator.local` / `admin` — смените пароль и секреты в `.env` перед production.
 
-## Разделы Wiki
-
-- [Быстрый старт](Getting-Started)
-- [Архитектура](Architecture)
-- [Control Plane](Control-Plane)
-- [Runtime](Runtime)
-- [MCP](MCP)
-- [Схема данных](Database-Schema)
-- [API](API-Reference)
-- [Развёртывание](Deployment)
-- [Конфигурация](Configuration)
-- [Безопасность](Security)
-- [Roadmap](Roadmap)
-- [Устранение неполадок](Troubleshooting)
-
-## Архитектура
+## Структура репозитория
 
 ```
-UI (React) ──► Backend (FastAPI) ──► PostgreSQL / MinIO
-                    │                      ▲
-                    ├── Redis queue ──► Runtime (sandbox)
-                    └── Scheduler (APScheduler)
+pyorchestrator/
+├── backend/           # FastAPI — REST, WebSocket, RBAC
+├── frontend/          # React — панель управления
+├── runtime/           # Движок sandbox
+├── scheduler/         # Сервис APScheduler
+├── mcp/               # MCP-сервер для AI-агентов
+├── infrastructure/    # Prometheus, Grafana, Loki
+├── docs/              # Документация (GitHub Pages)
+├── wiki/              # Копия для GitHub Wiki
+└── docker-compose.yml
 ```
 
-## Репозиторий
+## Лицензия
 
-https://github.com/Developer-RU/pyorchestrator
+[MIT License](https://github.com/Developer-RU/pyorchestrator/blob/main/LICENSE)
