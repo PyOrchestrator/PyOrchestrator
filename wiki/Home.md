@@ -48,8 +48,8 @@
 ## Быстрый старт
 
 ```bash
-git clone https://github.com/Developer-RU/pyorchestrator.git
-cd pyorchestrator
+git clone https://github.com/Developer-RU/PyOrchestrator.git
+cd PyOrchestrator
 cp .env.example .env
 docker compose up --build
 ```
@@ -68,7 +68,7 @@ docker compose up --build
 ## Структура репозитория
 
 ```
-pyorchestrator/
+PyOrchestrator/
 ├── backend/           # FastAPI — REST, WebSocket, RBAC
 ├── frontend/          # React — панель управления
 ├── runtime/           # Движок sandbox
@@ -82,4 +82,4 @@ pyorchestrator/
 
 ## Лицензия
 
-[MIT License](https://github.com/Developer-RU/pyorchestrator/blob/main/LICENSE)
+[MIT License](https://github.com/Developer-RU/PyOrchestrator/blob/main/LICENSE)
