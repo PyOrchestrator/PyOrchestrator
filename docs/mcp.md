@@ -80,4 +80,4 @@ URL: `http://localhost:8010/mcp`
 3. `update_script_file` — изменить `main.py`
 4. `run_script` → `get_run_logs` — выполнить и прочитать вывод
 
-Подробнее: [mcp/README.md](https://github.com/Developer-RU/PyOrchestrator/blob/main/mcp/README.md)
+Подробнее: [mcp/README.md](https://github.com/PyOrchestrator/PyOrchestrator/blob/main/mcp/README.md)

@@ -2,16 +2,16 @@
 
 ![PyOrchestrator](docs/assets/banner.png)
 
-[![CI](https://github.com/Developer-RU/PyOrchestrator/actions/workflows/ci.yml/badge.svg)](https://github.com/Developer-RU/PyOrchestrator/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/github/v/release/Developer-RU/PyOrchestrator?label=release&color=22d3ee)](https://github.com/Developer-RU/PyOrchestrator/releases/tag/v0.1.0)
+[![CI](https://github.com/PyOrchestrator/PyOrchestrator/actions/workflows/ci.yml/badge.svg)](https://github.com/PyOrchestrator/PyOrchestrator/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/PyOrchestrator/PyOrchestrator?label=release&color=22d3ee)](https://github.com/PyOrchestrator/PyOrchestrator/releases/tag/v0.1.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-cyan.svg)](LICENSE)
-[![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-22d3ee)](https://developer-ru.github.io/PyOrchestrator/)
+[![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-22d3ee)](https://pyorchestrator.github.io/PyOrchestrator/)
 
 **SCADA/CMS platform** for creating, scheduling, running, and monitoring thousands of isolated Python scripts and bots — inside a fixed Docker Compose stack.
 
 > One Runtime Engine. Many sandboxes. Zero per-script containers.
 
-**Документация:** https://developer-ru.github.io/PyOrchestrator/
+**Документация:** https://pyorchestrator.github.io/PyOrchestrator/
 
 ## Architecture
 
@@ -27,7 +27,7 @@
 | `prometheus` + `grafana` + `loki` | Metrics & logs |
 | `mcp` | MCP server for AI agents (port 8010) |
 
-See [Architecture](https://developer-ru.github.io/PyOrchestrator/architecture/) for full design.
+See [Architecture](https://pyorchestrator.github.io/PyOrchestrator/architecture/) for full design.
 
 ### AI agents (MCP)
 
@@ -36,7 +36,7 @@ PyOrchestrator exposes an [MCP server](mcp/README.md) so Cursor and other agents
 ## Quick Start
 
 ```bash
-git clone https://github.com/Developer-RU/PyOrchestrator.git
+git clone https://github.com/PyOrchestrator/PyOrchestrator.git
 cd PyOrchestrator
 git checkout v0.1.0   # first stable release
 cp .env.example .env
@@ -92,18 +92,18 @@ PyOrchestrator/
 
 | Topic | Link |
 |-------|------|
-| Release notes (v0.1.0) | [release-notes](https://developer-ru.github.io/PyOrchestrator/release-notes/) |
-| Quick start | [getting-started](https://developer-ru.github.io/PyOrchestrator/getting-started/) |
-| Architecture | [architecture](https://developer-ru.github.io/PyOrchestrator/architecture/) |
-| Control Plane UI | [control-plane](https://developer-ru.github.io/PyOrchestrator/control-plane/) |
-| Runtime & sandbox | [runtime](https://developer-ru.github.io/PyOrchestrator/runtime/) |
-| MCP for AI agents | [mcp](https://developer-ru.github.io/PyOrchestrator/mcp/) |
-| API reference | [api-reference](https://developer-ru.github.io/PyOrchestrator/api-reference/) |
-| Deployment | [deployment](https://developer-ru.github.io/PyOrchestrator/deployment/) |
-| Configuration | [configuration](https://developer-ru.github.io/PyOrchestrator/configuration/) |
-| Security | [security](https://developer-ru.github.io/PyOrchestrator/security/) |
-| Roadmap | [roadmap](https://developer-ru.github.io/PyOrchestrator/roadmap/) |
-| Troubleshooting | [troubleshooting](https://developer-ru.github.io/PyOrchestrator/troubleshooting/) |
+| Release notes (v0.1.0) | [release-notes](https://pyorchestrator.github.io/PyOrchestrator/release-notes/) |
+| Quick start | [getting-started](https://pyorchestrator.github.io/PyOrchestrator/getting-started/) |
+| Architecture | [architecture](https://pyorchestrator.github.io/PyOrchestrator/architecture/) |
+| Control Plane UI | [control-plane](https://pyorchestrator.github.io/PyOrchestrator/control-plane/) |
+| Runtime & sandbox | [runtime](https://pyorchestrator.github.io/PyOrchestrator/runtime/) |
+| MCP for AI agents | [mcp](https://pyorchestrator.github.io/PyOrchestrator/mcp/) |
+| API reference | [api-reference](https://pyorchestrator.github.io/PyOrchestrator/api-reference/) |
+| Deployment | [deployment](https://pyorchestrator.github.io/PyOrchestrator/deployment/) |
+| Configuration | [configuration](https://pyorchestrator.github.io/PyOrchestrator/configuration/) |
+| Security | [security](https://pyorchestrator.github.io/PyOrchestrator/security/) |
+| Roadmap | [roadmap](https://pyorchestrator.github.io/PyOrchestrator/roadmap/) |
+| Troubleshooting | [troubleshooting](https://pyorchestrator.github.io/PyOrchestrator/troubleshooting/) |
 
 ## Development Status
 
@@ -121,7 +121,7 @@ PyOrchestrator/
 
 | Version | Date | Notes |
 |---------|------|-------|
-| [v0.1.0](https://github.com/Developer-RU/PyOrchestrator/releases/tag/v0.1.0) | 2026-06-27 | First public release — see [CHANGELOG.md](CHANGELOG.md) and [docs](https://developer-ru.github.io/PyOrchestrator/release-notes/) |
+| [v0.1.0](https://github.com/PyOrchestrator/PyOrchestrator/releases/tag/v0.1.0) | 2026-06-27 | First public release — see [CHANGELOG.md](CHANGELOG.md) and [docs](https://pyorchestrator.github.io/PyOrchestrator/release-notes/) |
 
 ## Contributing
 

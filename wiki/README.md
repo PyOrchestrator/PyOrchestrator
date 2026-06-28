@@ -1,8 +1,8 @@
 # Wiki PyOrchestrator
 
-Исходники страниц для [GitHub Wiki](https://github.com/Developer-RU/PyOrchestrator/wiki) репозитория.
+Исходники страниц для [GitHub Wiki](https://github.com/PyOrchestrator/PyOrchestrator/wiki) репозитория.
 
-Основная документация публикуется на **GitHub Pages**: https://developer-ru.github.io/PyOrchestrator/
+Основная документация публикуется на **GitHub Pages**: https://pyorchestrator.github.io/PyOrchestrator/
 
 | Файл | Страница Wiki |
 |------|---------------|

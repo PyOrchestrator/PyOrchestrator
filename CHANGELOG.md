@@ -31,4 +31,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Script stop for queued/cancelled runs and async notification lazy-load
 - Dashboard asset mix label cleanup, MetricsStrip typography
 
-[0.1.0]: https://github.com/Developer-RU/PyOrchestrator/releases/tag/v0.1.0
+[0.1.0]: https://github.com/PyOrchestrator/PyOrchestrator/releases/tag/v0.1.0

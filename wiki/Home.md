@@ -48,7 +48,7 @@
 ## Быстрый старт
 
 ```bash
-git clone https://github.com/Developer-RU/PyOrchestrator.git
+git clone https://github.com/PyOrchestrator/PyOrchestrator.git
 cd PyOrchestrator
 cp .env.example .env
 docker compose up --build
@@ -82,4 +82,4 @@ PyOrchestrator/
 
 ## Лицензия
 
-[MIT License](https://github.com/Developer-RU/PyOrchestrator/blob/main/LICENSE)
+[MIT License](https://github.com/PyOrchestrator/PyOrchestrator/blob/main/LICENSE)

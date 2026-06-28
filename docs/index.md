@@ -25,7 +25,7 @@ layout: default
   </p>
 </div>
 
-> **27 июня 2026** — опубликован [первый релиз v0.1.0](https://github.com/Developer-RU/PyOrchestrator/releases/tag/v0.1.0).
+> **27 июня 2026** — опубликован [первый релиз v0.1.0](https://github.com/PyOrchestrator/PyOrchestrator/releases/tag/v0.1.0).
 > См. [заметки о выпуске]({{ '/release-notes/' | relative_url }}).
 
 **PyOrchestrator** — платформа для создания, планирования, запуска и мониторинга Python-автоматизации в фиксированном стеке Docker Compose: веб-интерфейс, API, планировщик, изолированный runtime, наблюдаемость и MCP-сервер для AI-агентов.
@@ -71,7 +71,7 @@ layout: default
 ## Быстрый старт
 
 ```bash
-git clone https://github.com/Developer-RU/PyOrchestrator.git
+git clone https://github.com/PyOrchestrator/PyOrchestrator.git
 cd PyOrchestrator
 cp .env.example .env
 docker compose up --build
@@ -105,4 +105,4 @@ PyOrchestrator/
 
 ## Лицензия
 
-[MIT License](https://github.com/Developer-RU/PyOrchestrator/blob/main/LICENSE)
+[MIT License](https://github.com/PyOrchestrator/PyOrchestrator/blob/main/LICENSE)
