@@ -10,6 +10,7 @@ from sqlalchemy import select
 
 from app.api.v1.router import api_router
 from app.api.v1.misc import internal_router as internal_routes
+from app.services.update_settings_service import get_app_version
 from app.core.config import settings
 from app.core.security import hash_password
 from app.db.schema_patches import apply_schema_patches
@@ -102,7 +103,7 @@ async def seed_data() -> None:
 
 app = FastAPI(
     title="PyOrchestrator API",
-    version=settings.app_version,
+    version=get_app_version(),
     description="SCADA/CMS platform for Python scripts and bots",
     lifespan=lifespan,
 )
@@ -123,4 +124,4 @@ app.mount("/metrics", make_asgi_app())
 
 @app.get("/health")
 async def health():
-    return {"status": "ok", "service": "backend", "version": settings.app_version}
+    return {"status": "ok", "service": "backend", "version": get_app_version()}

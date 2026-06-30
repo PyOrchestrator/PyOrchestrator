@@ -7,9 +7,13 @@ from typing import Any
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
+import re
+from pathlib import Path
+
 from app.core.config import settings
 from app.models.system import SystemSetting
 from app.utils.github_repo import validate_github_repo
+from app.utils.semver import is_newer_version
 
 KEY_MAP = {
     "check_enabled": "update_check_enabled",
@@ -47,9 +51,31 @@ class UpdateSettingsData:
 
 DEFAULTS = UpdateSettingsData()
 
+_DEPLOY_CONFIG_PATHS = (
+    Path("/app/app/core/config.py"),
+    Path("/deploy/backend/app/core/config.py"),
+)
+_VERSION_PATTERN = re.compile(r'app_version:\s*str\s*=\s*"([^"]+)"')
+
+
+def _read_deployed_app_version() -> str | None:
+    for path in _DEPLOY_CONFIG_PATHS:
+        try:
+            if path.is_file():
+                match = _VERSION_PATTERN.search(path.read_text(encoding="utf-8"))
+                if match:
+                    return match.group(1)
+        except OSError:
+            continue
+    return None
+
 
 def get_app_version() -> str:
-    return settings.app_version
+    env_version = settings.app_version
+    deployed = _read_deployed_app_version()
+    if deployed and is_newer_version(deployed, env_version):
+        return deployed
+    return env_version
 
 
 class UpdateSettingsService:

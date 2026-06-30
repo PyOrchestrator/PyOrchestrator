@@ -183,6 +183,18 @@ else
 fi
 set_step fetch completed "Checked out $TARGET_TAG"
 
+TARGET_VER="${TARGET_TAG#v}"
+ENV_FILE="$PROJECT_ROOT/.env"
+if [[ -f "$ENV_FILE" ]]; then
+  if grep -q '^APP_VERSION=' "$ENV_FILE"; then
+    sed -i "s/^APP_VERSION=.*/APP_VERSION=${TARGET_VER}/" "$ENV_FILE"
+  else
+    printf '\nAPP_VERSION=%s\n' "$TARGET_VER" >> "$ENV_FILE"
+  fi
+else
+  printf 'APP_VERSION=%s\n' "$TARGET_VER" > "$ENV_FILE"
+fi
+
 set_step deploy running "Rebuilding services"
 if [[ "$DEPLOY_MODE" == "docker" || "$DEPLOY_MODE" == "docker-replica" ]]; then
   HOST_ROOT="${UPDATE_HOST_PROJECT_ROOT:-${PYORCH_HOST_PROJECT_ROOT:-}}"
