@@ -4,6 +4,27 @@ title: Заметки о выпуске
 description: История релизов PyOrchestrator
 ---
 
+## v0.1.11 — опциональная наблюдаемость и MinIO Console
+
+**Дата:** 30 июня 2026  
+**Тег:** [`v0.1.11`](https://github.com/PyOrchestrator/PyOrchestrator/releases/tag/v0.1.11)
+
+### Новое
+
+- Блок **Наблюдаемость** на дашборде — только если Grafana включена (`GRAFANA_ENABLED`) и отвечает на health-check
+- **MinIO Console** опциональна: по умолчанию только S3 API (`MINIO_CONSOLE_ENABLED=false`)
+
+### Изменено
+
+- Страница **Система**: карточки Bucket и статус MinIO на всю ширину, когда консоль отключена
+- Документация и wiki обновлены под OTA и новые переменные окружения
+
+### OTA (с v0.1.5)
+
+Полноценные обновления через **Настройки → Обновления ПО** с GitHub Releases, Docker-исполнителем и откатом.
+
+---
+
 ## v0.1.0 — первый публичный выпуск
 
 **Дата:** 27 июня 2026  
@@ -26,20 +47,12 @@ description: История релизов PyOrchestrator
 | **Документация** | GitHub Pages на русском, wiki-копия в репозитории |
 | **CI** | Сборка backend/frontend, Docker Compose build |
 
-### Улучшения и исправления
-
-- Интеграция **MinIO**: health check, автосоздание bucket, `minio-init`, корректный статус в панели System
-- **Страница входа**: split-layout (брендинг + форма), баннер проекта
-- **GitHub Pages**: русская документация, sidebar с live-лентой открытых Issues
-- Исправлено удаление расписаний (FK `runs.schedule_id` → `ON DELETE SET NULL`)
-- Корректная остановка queued/cancelled runs, lazy-load уведомлений
-
 ### Быстрый старт
 
 ```bash
 git clone https://github.com/PyOrchestrator/PyOrchestrator.git
 cd PyOrchestrator
-git checkout v0.1.0
+git checkout v0.1.11
 cp .env.example .env
 docker compose up --build
 ```
@@ -51,10 +64,6 @@ docker compose up --build
 | MCP | http://localhost:8010/mcp |
 
 **Логин по умолчанию:** `admin@pyorchestrator.local` / `admin` — смените пароль и секреты в `.env` перед production.
-
-### Дальше
-
-См. [дорожную карту]({{ '/roadmap/' | relative_url }}) — фаза **Production-3** (MQTT, HA Postgres, продвинутая изоляция) в backlog.
 
 ---
 

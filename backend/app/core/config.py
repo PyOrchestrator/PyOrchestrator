@@ -21,7 +21,7 @@ class Settings(BaseSettings):
     minio_bucket: str = "pyorchestrator"
     minio_secure: bool = False
     minio_console_port: int = 9001
-    minio_console_enabled: bool = True
+    minio_console_enabled: bool = False
     minio_console_public_url: str = ""
 
     grafana_public_url: str = ""
