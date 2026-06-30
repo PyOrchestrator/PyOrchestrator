@@ -18,6 +18,9 @@ fi
 
 cd "$PROJECT_ROOT"
 
+COMPOSE_PROJECT_NAME="${COMPOSE_PROJECT_NAME:-pyorchestrator}"
+export COMPOSE_PROJECT_NAME
+
 GIT_REF="$(jq -r '.gitRef // empty' "$SNAPSHOT_FILE")"
 MODE="$(jq -r '.mode // "docker"' "$SNAPSHOT_FILE")"
 USE_GIT="$(jq -r '.useGit // 1' "$SNAPSHOT_FILE")"
@@ -27,6 +30,7 @@ GITHUB_REPO="$(jq -r '.githubRepo // "PyOrchestrator/PyOrchestrator"' "$SNAPSHOT
 echo "Rolling back job $JOB_ID to v${FROM_VERSION:-$GIT_REF}"
 
 if [[ "$USE_GIT" == "1" && -n "$GIT_REF" && "$GIT_REF" != "unknown" && "$GIT_REF" != "null" && "$GIT_REF" != "archive" ]]; then
+  rm -f .git/index.lock
   git fetch --tags --force origin || true
   git checkout "$GIT_REF"
 elif [[ -n "$FROM_VERSION" ]]; then
@@ -53,7 +57,7 @@ fi
 
 if [[ "$MODE" == "docker" || "$MODE" == "docker-replica" || "$DEPLOY_MODE" == "docker" || "$DEPLOY_MODE" == "docker-replica" ]]; then
   export PYORCH_HOST_PROJECT_ROOT="${UPDATE_HOST_PROJECT_ROOT:-${PYORCH_HOST_PROJECT_ROOT:-$PWD}}"
-  docker compose -f "$COMPOSE_FILE" up -d --build --remove-orphans
+  docker compose -p "$COMPOSE_PROJECT_NAME" -f "$COMPOSE_FILE" up -d --build --remove-orphans
 else
   echo "Native rollback is not supported"
   exit 1

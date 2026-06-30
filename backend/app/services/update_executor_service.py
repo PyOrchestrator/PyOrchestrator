@@ -137,6 +137,8 @@ class UpdateExecutorService:
             if settings.update_docker_network:
                 docker_args.extend(["--network", settings.update_docker_network])
             docker_args.extend(["-e", f"PYORCH_HOST_PROJECT_ROOT={host_project}"])
+            docker_args.extend(["-e", f"COMPOSE_PROJECT_NAME={settings.compose_project_name}"])
+            docker_args.extend(["-e", f"UPDATE_HOST_PROJECT_ROOT={host_project}"])
             docker_args.extend([settings.update_runner_image, "sh", "-c", inner])
             try:
                 self._spawn_docker(docker_args)

@@ -5,7 +5,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
     app_env: str = "development"
-    app_version: str = "0.1.2"
+    app_version: str = "0.1.3"
 
     postgres_host: str = "postgres"
     postgres_port: int = 5432
@@ -55,6 +55,7 @@ class Settings(BaseSettings):
     update_docker_network: str = "pyorchestrator_pyorch-net"
     update_health_url: str = "http://backend:8000/health"
     update_runner_image: str = "docker:26-cli"
+    compose_project_name: str = "pyorchestrator"
 
     @property
     def database_url(self) -> str:

@@ -132,6 +132,9 @@ set_step snapshot running "Recording current version"
 
 cd "$PROJECT_ROOT"
 
+COMPOSE_PROJECT_NAME="${COMPOSE_PROJECT_NAME:-pyorchestrator}"
+export COMPOSE_PROJECT_NAME
+
 USE_GIT=0
 if [[ -d .git ]]; then
   USE_GIT=1
@@ -166,6 +169,7 @@ set_step snapshot completed "Snapshot saved (v${FROM_VERSION})"
 
 set_step fetch running "Fetching $TARGET_TAG"
 if [[ "$USE_GIT" -eq 1 ]]; then
+  rm -f .git/index.lock
   if ! git remote get-url origin >/dev/null 2>&1; then
     git remote add origin "https://github.com/${GITHUB_REPO}.git"
   fi
@@ -182,8 +186,8 @@ set_step fetch completed "Checked out $TARGET_TAG"
 set_step deploy running "Rebuilding services"
 if [[ "$DEPLOY_MODE" == "docker" || "$DEPLOY_MODE" == "docker-replica" ]]; then
   export PYORCH_HOST_PROJECT_ROOT="${UPDATE_HOST_PROJECT_ROOT:-${PYORCH_HOST_PROJECT_ROOT:-$PWD}}"
-  docker compose -f "$COMPOSE_FILE" pull --ignore-buildable 2>/dev/null || docker compose -f "$COMPOSE_FILE" pull || true
-  docker compose -f "$COMPOSE_FILE" up -d --build --remove-orphans
+  docker compose -p "$COMPOSE_PROJECT_NAME" -f "$COMPOSE_FILE" pull --ignore-buildable 2>/dev/null || docker compose -p "$COMPOSE_PROJECT_NAME" -f "$COMPOSE_FILE" pull || true
+  docker compose -p "$COMPOSE_PROJECT_NAME" -f "$COMPOSE_FILE" up -d --build --remove-orphans
 else
   echo "Native deploy mode is not fully supported for PyOrchestrator"
   exit 1

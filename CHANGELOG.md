@@ -5,6 +5,16 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.3] - 2026-06-30
+
+### Fixed
+
+- OTA deploy: use fixed Compose project name (`pyorchestrator`) so `docker compose up` recreates existing containers instead of conflicting with `container_name`
+- Pass `COMPOSE_PROJECT_NAME` into the update runner container
+- Clear stale `.git/index.lock` before git operations during update/rollback
+
+[0.1.3]: https://github.com/PyOrchestrator/PyOrchestrator/releases/tag/v0.1.3
+
 ## [0.1.2] - 2026-06-30
 
 ### Added
