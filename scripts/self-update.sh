@@ -187,7 +187,7 @@ set_step deploy running "Rebuilding services"
 if [[ "$DEPLOY_MODE" == "docker" || "$DEPLOY_MODE" == "docker-replica" ]]; then
   HOST_ROOT="${UPDATE_HOST_PROJECT_ROOT:-${PYORCH_HOST_PROJECT_ROOT:-}}"
   if [[ -z "$HOST_ROOT" || "$HOST_ROOT" == "/deploy" ]]; then
-    echo "ERROR: UPDATE_HOST_PROJECT_ROOT must be set to the absolute host project path for Docker deploy"
+    echo "ERROR: Could not resolve host project path. Set UPDATE_HOST_PROJECT_ROOT or PYORCH_HOST_PROJECT_ROOT."
     exit 1
   fi
   export PYORCH_HOST_PROJECT_ROOT="$HOST_ROOT"

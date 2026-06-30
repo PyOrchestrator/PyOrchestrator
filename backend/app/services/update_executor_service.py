@@ -188,8 +188,61 @@ class UpdateExecutorService:
 
     def _host_project_root(self) -> Path:
         if settings.update_host_project_root:
-            return Path(settings.update_host_project_root)
+            path = Path(settings.update_host_project_root)
+            if path.is_dir() and str(path) != "/deploy":
+                return path
+        detected = self._detect_via_docker_inspect() or self._detect_deploy_mount_source()
+        if detected:
+            return detected
         return Path(settings.update_project_root)
+
+    def _detect_deploy_mount_source(self) -> Path | None:
+        try:
+            for line in Path("/proc/self/mountinfo").read_text().splitlines():
+                parts = line.split()
+                if len(parts) < 10 or parts[4] != "/deploy":
+                    continue
+                dash = parts.index("-")
+                fs_type = parts[dash + 1]
+                if fs_type == "bind":
+                    source = parts[dash + 2].replace("\\040", " ")
+                    if source.startswith("/") and source != "/deploy":
+                        return Path(source)
+                if fs_type == "fakeowner":
+                    # Docker Desktop (macOS): root field is the path under /Users
+                    root = parts[3]
+                    if root.startswith("/"):
+                        return Path("/Users") / root.lstrip("/")
+        except (OSError, ValueError):
+            pass
+        return None
+
+    def _detect_via_docker_inspect(self) -> Path | None:
+        import os
+
+        container_id = os.environ.get("HOSTNAME", "").strip()
+        if not container_id:
+            return None
+        try:
+            proc = subprocess.run(
+                [
+                    "docker",
+                    "inspect",
+                    "-f",
+                    '{{range .Mounts}}{{if eq .Destination "/deploy"}}{{.Source}}{{end}}{{end}}',
+                    container_id,
+                ],
+                capture_output=True,
+                text=True,
+                check=False,
+                timeout=10,
+            )
+            source = proc.stdout.strip()
+            if source and source != "/deploy":
+                return Path(source)
+        except Exception:
+            pass
+        return None
 
     def _host_compose_path(self, host_project: Path) -> Path:
         compose = Path(settings.update_compose_file)
