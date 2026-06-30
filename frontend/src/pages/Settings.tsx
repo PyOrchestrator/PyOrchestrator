@@ -56,9 +56,14 @@ export default function SettingsPage() {
     <PageContainer>
       <PageHeader title={t("settings.title")} subtitle={t("settings.subtitle")} />
 
-      <PageContent>
-        <div className="grid auto-rows-fr grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-          <Panel title={t("settings.profile.title")} subtitle={user?.email} bodyClassName="space-y-4">
+      <PageContent className="flex flex-col gap-6">
+        <div className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <Panel
+            title={t("settings.profile.title")}
+            subtitle={user?.email}
+            className="h-full"
+            bodyClassName="flex h-full flex-1 flex-col gap-4"
+          >
             <FieldGroup>
               <FieldLabel htmlFor="profile-name">{t("settings.profile.displayName")}</FieldLabel>
               <Input
@@ -87,7 +92,7 @@ export default function SettingsPage() {
                 placeholder={t("settings.profile.passwordMin")}
               />
             </FieldGroup>
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="mt-auto flex flex-wrap items-center gap-3 pt-2">
               <Button disabled={!profileValid || profileBusy} onClick={saveProfile}>
                 {t("settings.profile.saveProfile")}
               </Button>
@@ -97,7 +102,12 @@ export default function SettingsPage() {
             </div>
           </Panel>
 
-          <Panel title={t("settings.localization.title")} subtitle={t("settings.localization.subtitle")} bodyClassName="space-y-3">
+          <Panel
+            title={t("settings.localization.title")}
+            subtitle={t("settings.localization.subtitle")}
+            className="h-full"
+            bodyClassName="flex h-full flex-1 flex-col gap-3"
+          >
             <LocaleOption
               value="en"
               label={t("settings.localization.english")}
@@ -114,7 +124,7 @@ export default function SettingsPage() {
               active={locale === "ru"}
               onSelect={setLocale}
             />
-            <p className="pt-1 text-xs text-faint">
+            <p className="mt-auto pt-2 text-xs text-faint">
               {t("settings.localization.activeNow")}:{" "}
               <span className="font-medium text-muted">
                 {locale === "ru" ? t("settings.localization.russian") : t("settings.localization.english")}
@@ -122,7 +132,12 @@ export default function SettingsPage() {
             </p>
           </Panel>
 
-          <Panel title={t("settings.appearance.title")} subtitle={t("settings.appearance.subtitle")} bodyClassName="space-y-3">
+          <Panel
+            title={t("settings.appearance.title")}
+            subtitle={t("settings.appearance.subtitle")}
+            className="h-full sm:col-span-2 lg:col-span-1"
+            bodyClassName="flex h-full flex-1 flex-col gap-3"
+          >
             <ThemeOption
               value="dark"
               label={t("settings.appearance.dark")}
@@ -147,7 +162,7 @@ export default function SettingsPage() {
               active={theme === "system"}
               onSelect={setTheme}
             />
-            <p className="pt-1 text-xs text-faint">
+            <p className="mt-auto pt-2 text-xs text-faint">
               {t("settings.appearance.activeNow")}:{" "}
               <span className="font-medium text-muted">
                 {resolved === "dark" ? t("settings.appearance.dark") : t("settings.appearance.light")}
@@ -156,9 +171,9 @@ export default function SettingsPage() {
               {t("settings.appearance.quickToggle")}
             </p>
           </Panel>
-
-          {user?.role === "Administrator" && <UpdatesSettingsPanel />}
         </div>
+
+        {user?.role === "Administrator" && <UpdatesSettingsPanel />}
       </PageContent>
     </PageContainer>
   );

@@ -319,6 +319,31 @@ export default function UpdatesSettingsPanel() {
         </div>
       )}
 
+      {status.recent_jobs.filter((j) => j.id !== job?.id && j.status === "failed").length > 0 && (
+        <div className="space-y-2">
+          <p className="text-sm font-semibold text-foreground">{t("settings.updates.recentJobsTitle")}</p>
+          {status.recent_jobs
+            .filter((j) => j.id !== job?.id && j.status === "failed")
+            .slice(0, 3)
+            .map((recent) => (
+              <div
+                key={recent.id}
+                className="rounded-lg border border-red-500/20 bg-red-500/5 px-4 py-3 text-sm"
+              >
+                <p className="font-medium text-foreground">
+                  {t("settings.updates.recentJobFailed", {
+                    from: recent.from_version,
+                    to: recent.target_version,
+                  })}
+                </p>
+                {recent.error && (
+                  <p className="mt-1 whitespace-pre-wrap font-mono text-xs text-muted">{recent.error}</p>
+                )}
+              </div>
+            ))}
+        </div>
+      )}
+
       <div className="space-y-4">
         <div className="flex items-center gap-2">
           <Cog6ToothIcon className="size-4 text-faint" />

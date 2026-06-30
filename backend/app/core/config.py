@@ -5,7 +5,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
     app_env: str = "development"
-    app_version: str = "0.1.1"
+    app_version: str = "0.1.2"
 
     postgres_host: str = "postgres"
     postgres_port: int = 5432
@@ -51,8 +51,8 @@ class Settings(BaseSettings):
     update_project_root: str = "/deploy"
     update_host_project_root: str = ""
     update_data_dir: str = "/app/data/updates"
-    update_data_volume: str = "pyorch_update_data"
-    update_docker_network: str = "pyorch-net"
+    update_data_volume: str = "pyorchestrator_update_data"
+    update_docker_network: str = "pyorchestrator_pyorch-net"
     update_health_url: str = "http://backend:8000/health"
     update_runner_image: str = "docker:26-cli"
 

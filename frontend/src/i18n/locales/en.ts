@@ -603,6 +603,8 @@ export const en = {
       behaviorTitle: "Update behavior",
       configurationTitle: "Source & intervals",
       activeJobHint: "The updater runs in a detached container and rebuilds the Compose stack.",
+      recentJobsTitle: "Recent update attempts",
+      recentJobFailed: "v{from} → v{to} failed",
     },
   },
   updates: {

@@ -605,6 +605,8 @@ export const ru: Messages = {
       behaviorTitle: "Поведение обновлений",
       configurationTitle: "Источник и интервалы",
       activeJobHint: "Обновление выполняется в отдельном контейнере с пересборкой Compose-стека.",
+      recentJobsTitle: "Недавние попытки обновления",
+      recentJobFailed: "v{from} → v{to} — ошибка",
     },
   },
   updates: {

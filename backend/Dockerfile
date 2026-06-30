@@ -6,6 +6,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     bash curl git jq rsync \
     && rm -rf /var/lib/apt/lists/*
 
+COPY --from=docker:26-cli /usr/local/bin/docker /usr/local/bin/docker
+
 COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 

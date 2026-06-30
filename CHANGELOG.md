@@ -5,6 +5,19 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.2] - 2026-06-30
+
+### Added
+
+- Equal-height responsive layout for Profile, Localization, and Appearance cards on Settings
+
+### Fixed
+
+- OTA update executor: Docker CLI in backend image, correct Compose volume/network names, host project path
+- Update scheduler: Postgres advisory lock prevents duplicate auto-updates on startup
+
+[0.1.2]: https://github.com/PyOrchestrator/PyOrchestrator/releases/tag/v0.1.2
+
 ## [0.1.1] - 2026-06-30
 
 ### Added
