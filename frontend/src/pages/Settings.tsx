@@ -1,14 +1,14 @@
 import { ComputerDesktopIcon, GlobeAltIcon, LanguageIcon } from "@heroicons/react/20/solid";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import PageContainer, { PageContent } from "@/components/layout/PageContainer";
 import PageHeader from "@/components/layout/PageHeader";
+import UpdatesSettingsPanel from "@/components/UpdatesSettingsPanel";
 import Button from "@/components/ui/Button";
 import { FieldGroup, FieldLabel, Input } from "@/components/ui/Input";
 import { LocaleOption } from "@/components/ui/LocaleOption";
 import Panel from "@/components/ui/Panel";
 import { MoonIcon, SunIcon, ThemeOption } from "@/components/ui/ThemeToggle";
-import { useLiveQuery } from "@/hooks/useLiveQuery";
-import { api, API_URL } from "@/api/client";
+import { api } from "@/api/client";
 import { useAuth } from "@/context/AuthContext";
 import { useTranslation } from "@/context/LocaleContext";
 import { useToast } from "@/context/ToastContext";
@@ -27,13 +27,6 @@ export default function SettingsPage() {
   useEffect(() => {
     if (user) setDisplayName(user.display_name);
   }, [user]);
-
-  const fetchInfo = useCallback(() => api<{ version: string }>("/api/v1/system/info"), []);
-  const { data: info, reload, refreshing, lastUpdated } = useLiveQuery(fetchInfo, [], {
-    intervalMs: 60_000,
-  });
-
-  const version = info?.version ?? "";
 
   const saveProfile = async () => {
     setProfileBusy(true);
@@ -61,13 +54,7 @@ export default function SettingsPage() {
 
   return (
     <PageContainer>
-      <PageHeader
-        title={t("settings.title")}
-        subtitle={t("settings.subtitle")}
-        onRefresh={reload}
-        refreshing={refreshing}
-        lastUpdated={lastUpdated}
-      />
+      <PageHeader title={t("settings.title")} subtitle={t("settings.subtitle")} />
 
       <PageContent>
         <div className="grid auto-rows-fr grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -170,37 +157,7 @@ export default function SettingsPage() {
             </p>
           </Panel>
 
-          <Panel title={t("settings.system.title")} bodyClassName="space-y-4">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-faint">{t("settings.system.version")}</p>
-              <p className="mt-1 text-2xl font-bold tabular-nums text-foreground">{version || "—"}</p>
-            </div>
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-faint">{t("settings.system.apiEndpoint")}</p>
-              <p className="mt-1 break-all font-mono text-xs leading-relaxed text-foreground-secondary">{API_URL}</p>
-            </div>
-          </Panel>
-
-          {user?.role === "Administrator" && (
-            <Panel title={t("settings.updates.title")} subtitle={t("settings.updates.subtitle")} bodyClassName="flex flex-col gap-4">
-              <Button
-                variant="secondary"
-                className="w-fit"
-                onClick={async () => {
-                  const result = await api<{ update_available: boolean; latest_version: string | null }>(
-                    "/api/v1/system/updates/check",
-                  );
-                  toast.info(
-                    result.update_available
-                      ? t("settings.updates.available", { version: result.latest_version ?? "" })
-                      : t("settings.updates.upToDate"),
-                  );
-                }}
-              >
-                {t("settings.updates.check")}
-              </Button>
-            </Panel>
-          )}
+          {user?.role === "Administrator" && <UpdatesSettingsPanel />}
         </div>
       </PageContent>
     </PageContainer>

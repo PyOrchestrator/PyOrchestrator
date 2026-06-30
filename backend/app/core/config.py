@@ -5,7 +5,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
     app_env: str = "development"
-    app_version: str = "0.1.0"
+    app_version: str = "0.1.1"
 
     postgres_host: str = "postgres"
     postgres_port: int = 5432
@@ -39,6 +39,22 @@ class Settings(BaseSettings):
 
     default_admin_email: str = "admin@pyorchestrator.local"
     default_admin_password: str = "admin"
+
+    backend_port: int = 8000
+
+    github_update_repo: str = "PyOrchestrator/PyOrchestrator"
+    github_update_token: str | None = None
+
+    update_executor_enabled: bool = True
+    update_deploy_mode: str = "docker"
+    update_compose_file: str = "/deploy/docker-compose.yml"
+    update_project_root: str = "/deploy"
+    update_host_project_root: str = ""
+    update_data_dir: str = "/app/data/updates"
+    update_data_volume: str = "pyorch_update_data"
+    update_docker_network: str = "pyorch-net"
+    update_health_url: str = "http://backend:8000/health"
+    update_runner_image: str = "docker:26-cli"
 
     @property
     def database_url(self) -> str:

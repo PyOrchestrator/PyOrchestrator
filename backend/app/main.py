@@ -19,7 +19,8 @@ from app.models.run import BackupSettings
 from app.models.script import Script, ScriptTemplate
 from app.models.user import Group, User
 from app.seed.demo_scripts import DEMO_SCRIPTS, DEMO_TEMPLATES
-from app.services.script_service import create_script, storage_service
+from app.services.update_scheduler import update_scheduler
+from app.services.update_settings_service import update_settings_service
 from app.ws.logs import router as ws_router
 
 
@@ -33,7 +34,11 @@ async def lifespan(app: FastAPI):
     except Exception:
         pass
     await seed_data()
+    async with async_session() as db:
+        await update_settings_service.seed_defaults(db)
+    await update_scheduler.start()
     yield
+    await update_scheduler.stop()
     await engine.dispose()
 
 

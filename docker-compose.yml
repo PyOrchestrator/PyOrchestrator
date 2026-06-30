@@ -19,8 +19,8 @@ services:
 
   backend:
     build:
-      context: ./backend
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: backend/Dockerfile
     container_name: pyorch-backend
     restart: unless-stopped
     ports:
@@ -28,12 +28,28 @@ services:
     environment:
       <<: *common-env
       APP_ENV: ${APP_ENV:-development}
+      APP_VERSION: ${APP_VERSION:-0.1.1}
       JWT_SECRET: ${JWT_SECRET:-jwt-dev-secret-change-in-prod}
       CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:5173}
       INTERNAL_API_KEY: ${INTERNAL_API_KEY:-internal-dev-key}
       RUNTIME_QUEUE_KEY: runtime:jobs
+      GITHUB_UPDATE_REPO: ${GITHUB_UPDATE_REPO:-PyOrchestrator/PyOrchestrator}
+      GITHUB_UPDATE_TOKEN: ${GITHUB_UPDATE_TOKEN:-}
+      UPDATE_EXECUTOR_ENABLED: ${UPDATE_EXECUTOR_ENABLED:-true}
+      UPDATE_DEPLOY_MODE: ${UPDATE_DEPLOY_MODE:-docker}
+      UPDATE_COMPOSE_FILE: /deploy/docker-compose.yml
+      UPDATE_PROJECT_ROOT: /deploy
+      UPDATE_HOST_PROJECT_ROOT: ${PYORCH_HOST_PROJECT_ROOT:-}
+      UPDATE_DATA_DIR: /app/data/updates
+      UPDATE_DATA_VOLUME: pyorch_update_data
+      UPDATE_DOCKER_NETWORK: pyorch-net
+      UPDATE_HEALTH_URL: http://backend:8000/health
+      UPDATE_RUNNER_IMAGE: ${UPDATE_RUNNER_IMAGE:-docker:26-cli}
     volumes:
       - ./backend/app:/app/app
+      - update_data:/app/data/updates
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${PYORCH_HOST_PROJECT_ROOT:-.}:/deploy
     depends_on:
       postgres:
         condition: service_healthy
@@ -320,3 +336,4 @@ volumes:
   prometheus-data:
   grafana-data:
   loki-data:
+  update_data:

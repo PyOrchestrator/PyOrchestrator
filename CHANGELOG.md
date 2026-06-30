@@ -5,6 +5,25 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2026-06-30
+
+### Added
+
+- Full OTA update system: GitHub Releases check, apply, rollback, auto-update scheduler
+- Detached Docker updater (`scripts/self-update.sh`) with health check and automatic rollback
+- Update settings in DB (`system_settings`), job history (`update_jobs`)
+- API `/api/v1/updates/*` — status, check, settings, apply, dismiss, jobs
+- `UpdateBanner` in control plane and redesigned **Software updates** panel in Settings
+- In-app notifications for administrators on update available / started / completed / failed
+
+### Changed
+
+- Backend Docker image: project root mount, docker.sock, update data volume
+- License: Apache 2.0
+- Settings page: removed redundant System panel (version shown in Updates)
+
+[0.1.1]: https://github.com/PyOrchestrator/PyOrchestrator/releases/tag/v0.1.1
+
 ## [0.1.0] - 2026-06-27
 
 Первый публичный выпуск PyOrchestrator.
