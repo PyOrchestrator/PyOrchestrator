@@ -98,6 +98,7 @@ class ScriptUpdate(BaseModel):
     group_id: UUID | None = None
     status: str | None = None
     entrypoint: str | None = None
+    code: str | None = None
     max_concurrent_runs: int | None = None
     max_runtime_seconds: int | None = None
     max_memory_bytes: int | None = None
