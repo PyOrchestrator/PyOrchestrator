@@ -38,7 +38,7 @@ PyOrchestrator exposes an [MCP server](mcp/README.md) so Cursor and other agents
 ```bash
 git clone https://github.com/PyOrchestrator/PyOrchestrator.git
 cd PyOrchestrator
-git checkout v0.1.11
+git checkout v0.1.12
 cp .env.example .env
 docker compose up --build
 ```

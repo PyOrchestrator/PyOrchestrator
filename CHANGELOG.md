@@ -5,6 +5,22 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.12] - 2026-07-07
+
+### Fixed
+
+- `PUT /scripts/{id}` with `code` now updates the entrypoint file in DB and object storage (parity with create)
+- Script deletion removes related notifications before runs, fixing FK constraint errors (HTTP 500)
+- Runtime reconnects to Redis after `ConnectionError`; log publishing tolerates transient Redis/backend failures
+
+### Changed
+
+- Backend dependencies: SQLAlchemy 2.0.51, Pydantic 2.13.4, pydantic-settings 2.14.2, redis 8.0.1, python-multipart 0.0.32
+- Frontend dependencies: react-router-dom 7.18.1, @tailwindcss/vite 4.3.2
+- CI: actions/checkout v7
+
+[0.1.12]: https://github.com/PyOrchestrator/PyOrchestrator/releases/tag/v0.1.12
+
 ## [0.1.11] - 2026-06-30
 
 ### Added

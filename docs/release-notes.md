@@ -4,6 +4,23 @@ title: Заметки о выпуске
 description: История релизов PyOrchestrator
 ---
 
+## v0.1.12 — исправления API скриптов и устойчивость runtime
+
+**Дата:** 7 июля 2026  
+**Тег:** [`v0.1.12`](https://github.com/PyOrchestrator/PyOrchestrator/releases/tag/v0.1.12)
+
+### Исправлено
+
+- **Обновление кода скрипта:** `PUT /scripts/{id}` с полем `code` теперь обновляет entrypoint-файл (как при создании)
+- **Удаление скрипта:** корректная очистка уведомлений перед удалением запусков — без ошибок FK
+- **Runtime:** переподключение к Redis после обрыва соединения; публикация логов устойчива к временным сбоям
+
+### Изменено
+
+- Обновлены зависимости backend и frontend (см. [CHANGELOG](https://github.com/PyOrchestrator/PyOrchestrator/blob/main/CHANGELOG.md))
+
+---
+
 ## v0.1.11 — опциональная наблюдаемость и MinIO Console
 
 **Дата:** 30 июня 2026  
@@ -52,7 +69,7 @@ description: История релизов PyOrchestrator
 ```bash
 git clone https://github.com/PyOrchestrator/PyOrchestrator.git
 cd PyOrchestrator
-git checkout v0.1.11
+git checkout v0.1.12
 cp .env.example .env
 docker compose up --build
 ```

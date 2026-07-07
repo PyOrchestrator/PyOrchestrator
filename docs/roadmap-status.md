@@ -1,5 +1,14 @@
 # PyOrchestrator — Development Roadmap (status)
 
+## Completed in v0.1.12
+
+| Item | Status |
+|------|--------|
+| Script code update via PUT API | ✅ |
+| Script delete with notification history | ✅ |
+| Runtime Redis reconnect and resilient log publishing | ✅ |
+| Dependency updates (backend, frontend, CI) | ✅ |
+
 ## Completed in v0.1.11
 
 | Item | Status |

@@ -25,7 +25,7 @@ layout: default
   </p>
 </div>
 
-> **30 июня 2026** — опубликован [релиз v0.1.11](https://github.com/PyOrchestrator/PyOrchestrator/releases/tag/v0.1.11): OTA-обновления, опциональные Grafana и MinIO Console.
+> **7 июля 2026** — опубликован [релиз v0.1.12](https://github.com/PyOrchestrator/PyOrchestrator/releases/tag/v0.1.12): исправления API скриптов, удаление с уведомлениями, устойчивость runtime к Redis.
 > См. [заметки о выпуске]({{ '/release-notes/' | relative_url }}).
 
 **PyOrchestrator** — платформа для создания, планирования, запуска и мониторинга Python-автоматизации в фиксированном стеке Docker Compose: веб-интерфейс, API, планировщик, изолированный runtime, наблюдаемость и MCP-сервер для AI-агентов.

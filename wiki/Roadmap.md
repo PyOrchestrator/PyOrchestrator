@@ -1,6 +1,6 @@
-## Статус v0.1.11
+## Статус v0.1.12
 
-**Последний релиз:** [v0.1.11](https://github.com/PyOrchestrator/PyOrchestrator/releases/tag/v0.1.11) (30 июня 2026)
+**Последний релиз:** [v0.1.12](https://github.com/PyOrchestrator/PyOrchestrator/releases/tag/v0.1.12) (7 июля 2026)
 
 | Фаза | Статус | Примечания |
 |------|--------|------------|

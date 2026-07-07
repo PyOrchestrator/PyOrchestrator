@@ -1,5 +1,5 @@
 <div class="hero">
-  <span class="hero-badge">v0.1.11 · Docker Compose · Apache 2.0</span>
+  <span class="hero-badge">v0.1.12 · Docker Compose · Apache 2.0</span>
   <p class="hero-lead">
     SCADA/CMS-платформа управления для тысяч изолированных Python-скриптов и ботов —
     один Runtime Engine, множество sandbox, без отдельного контейнера на скрипт.
