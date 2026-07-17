@@ -51,6 +51,8 @@ nav:
     url: /roadmap/
   - title: Устранение неполадок
     url: /troubleshooting/
+  - title: Support Project
+    url: /support/
 
 github_org: PyOrchestrator
 github_repo: PyOrchestrator

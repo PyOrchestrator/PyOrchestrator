@@ -4,4 +4,7 @@
 <meta name="description" content="{{ page.description | default: site.description }}">
 <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+{% if page.support_page %}
+<link rel="stylesheet" href="{{ '/assets/css/support.css' | relative_url }}">
+{% endif %}
 {% seo %}
