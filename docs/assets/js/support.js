@@ -2,7 +2,7 @@
   function generateQrCodes() {
     if (typeof QRCode === 'undefined') {
       document.querySelectorAll('.donation-qr').forEach(function (el) {
-        el.innerHTML = '<span class="donation-qr-error">QR unavailable</span>';
+        el.innerHTML = '<span class="donation-qr-error">QR недоступен</span>';
       });
       return;
     }
@@ -23,7 +23,7 @@
         });
         el.setAttribute('data-qr-ready', '1');
       } catch (err) {
-        el.innerHTML = '<span class="donation-qr-error">QR error</span>';
+        el.innerHTML = '<span class="donation-qr-error">Ошибка QR</span>';
       }
     });
   }
@@ -65,20 +65,20 @@
           .then(function () {
             var original = btn.getAttribute('data-label') || btn.textContent;
             btn.setAttribute('data-label', original);
-            btn.textContent = 'Copied!';
+            btn.textContent = 'Скопировано!';
             btn.classList.add('is-copied');
             btn.setAttribute('aria-live', 'polite');
 
             if (resetTimer) clearTimeout(resetTimer);
             resetTimer = setTimeout(function () {
-              btn.textContent = btn.getAttribute('data-label') || 'Copy Address';
+              btn.textContent = btn.getAttribute('data-label') || 'Скопировать адрес';
               btn.classList.remove('is-copied');
             }, 2000);
           })
           .catch(function () {
-            btn.textContent = 'Copy failed';
+            btn.textContent = 'Ошибка копирования';
             setTimeout(function () {
-              btn.textContent = btn.getAttribute('data-label') || 'Copy Address';
+              btn.textContent = btn.getAttribute('data-label') || 'Скопировать адрес';
             }, 2000);
           });
       });
