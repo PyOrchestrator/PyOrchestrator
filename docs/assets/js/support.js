@@ -9,30 +9,22 @@
 
     document.querySelectorAll('.donation-qr[data-qr]').forEach(function (el) {
       var value = el.getAttribute('data-qr');
-      if (!value) return;
+      if (!value || el.getAttribute('data-qr-ready') === '1') return;
 
       el.innerHTML = '';
-      QRCode.toCanvas(
-        value,
-        {
+      try {
+        new QRCode(el, {
+          text: value,
           width: 148,
-          margin: 1,
-          color: {
-            dark: '#09090b',
-            light: '#ffffff'
-          },
-          errorCorrectionLevel: 'M'
-        },
-        function (err, canvas) {
-          if (err || !canvas) {
-            el.innerHTML = '<span class="donation-qr-error">QR error</span>';
-            return;
-          }
-          canvas.setAttribute('role', 'img');
-          canvas.setAttribute('aria-label', 'QR code for ' + value);
-          el.appendChild(canvas);
-        }
-      );
+          height: 148,
+          colorDark: '#09090b',
+          colorLight: '#ffffff',
+          correctLevel: QRCode.CorrectLevel.M
+        });
+        el.setAttribute('data-qr-ready', '1');
+      } catch (err) {
+        el.innerHTML = '<span class="donation-qr-error">QR error</span>';
+      }
     });
   }
 
@@ -104,10 +96,4 @@
   } else {
     init();
   }
-
-  // QRCode CDN may finish after DOMContentLoaded when using defer
-  window.addEventListener('load', function () {
-    if (document.querySelector('.donation-qr canvas')) return;
-    if (document.querySelector('.support-page')) generateQrCodes();
-  });
 })();

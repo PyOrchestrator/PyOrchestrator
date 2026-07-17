@@ -153,11 +153,17 @@
 }
 
 .donation-qr canvas,
-.donation-qr img {
+.donation-qr img,
+.donation-qr table {
   display: block;
   width: 148px !important;
   height: 148px !important;
   border-radius: 4px;
+  margin: 0 auto;
+}
+
+.donation-qr table {
+  border-collapse: collapse;
 }
 
 .donation-qr-error {
