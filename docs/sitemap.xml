@@ -1,20 +1,25 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="{{ '/sitemap.xsl' | absolute_url }}"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <!-- Language picker -->
-  <url>
-    <loc>https://pyorchestrator.github.io/PyOrchestrator/</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- English -->
   <url>
     <loc>https://pyorchestrator.github.io/PyOrchestrator/en/</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/"/>
+  </url>
+  <url>
+    <loc>https://pyorchestrator.github.io/PyOrchestrator/ru/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/"/>
@@ -26,129 +31,7 @@
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/release-notes/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/release-notes/"/>
-  </url>
-  <url>
-    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/getting-started/</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/getting-started/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/getting-started/"/>
-  </url>
-  <url>
-    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/architecture/</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/architecture/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/architecture/"/>
-  </url>
-  <url>
-    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/control-plane/</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/control-plane/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/control-plane/"/>
-  </url>
-  <url>
-    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/runtime/</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/runtime/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/runtime/"/>
-  </url>
-  <url>
-    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/mcp/</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/mcp/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/mcp/"/>
-  </url>
-  <url>
-    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/database-schema/</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/database-schema/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/database-schema/"/>
-  </url>
-  <url>
-    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/database-er/</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/database-er/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/database-er/"/>
-  </url>
-  <url>
-    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/api-reference/</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/api-reference/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/api-reference/"/>
-  </url>
-  <url>
-    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/deployment/</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/deployment/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/deployment/"/>
-  </url>
-  <url>
-    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/configuration/</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/configuration/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/configuration/"/>
-  </url>
-  <url>
-    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/security/</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/security/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/security/"/>
-  </url>
-  <url>
-    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/roadmap/</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/roadmap/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/roadmap/"/>
-  </url>
-  <url>
-    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/troubleshooting/</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/troubleshooting/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/troubleshooting/"/>
-  </url>
-  <url>
-    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/support/</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/support/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/support/"/>
-  </url>
-
-  <!-- Russian -->
-  <url>
-    <loc>https://pyorchestrator.github.io/PyOrchestrator/ru/</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/release-notes/"/>
   </url>
   <url>
     <loc>https://pyorchestrator.github.io/PyOrchestrator/ru/release-notes/</loc>
@@ -157,6 +40,16 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/release-notes/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/release-notes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/release-notes/"/>
+  </url>
+  <url>
+    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/getting-started/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/getting-started/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/getting-started/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/getting-started/"/>
   </url>
   <url>
     <loc>https://pyorchestrator.github.io/PyOrchestrator/ru/getting-started/</loc>
@@ -165,6 +58,16 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/getting-started/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/getting-started/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/getting-started/"/>
+  </url>
+  <url>
+    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/architecture/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/architecture/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/architecture/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/architecture/"/>
   </url>
   <url>
     <loc>https://pyorchestrator.github.io/PyOrchestrator/ru/architecture/</loc>
@@ -173,6 +76,16 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/architecture/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/architecture/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/architecture/"/>
+  </url>
+  <url>
+    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/control-plane/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/control-plane/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/control-plane/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/control-plane/"/>
   </url>
   <url>
     <loc>https://pyorchestrator.github.io/PyOrchestrator/ru/control-plane/</loc>
@@ -181,6 +94,16 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/control-plane/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/control-plane/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/control-plane/"/>
+  </url>
+  <url>
+    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/runtime/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/runtime/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/runtime/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/runtime/"/>
   </url>
   <url>
     <loc>https://pyorchestrator.github.io/PyOrchestrator/ru/runtime/</loc>
@@ -189,6 +112,16 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/runtime/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/runtime/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/runtime/"/>
+  </url>
+  <url>
+    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/mcp/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/mcp/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/mcp/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/mcp/"/>
   </url>
   <url>
     <loc>https://pyorchestrator.github.io/PyOrchestrator/ru/mcp/</loc>
@@ -197,6 +130,16 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/mcp/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/mcp/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/mcp/"/>
+  </url>
+  <url>
+    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/database-schema/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/database-schema/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/database-schema/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/database-schema/"/>
   </url>
   <url>
     <loc>https://pyorchestrator.github.io/PyOrchestrator/ru/database-schema/</loc>
@@ -205,6 +148,16 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/database-schema/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/database-schema/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/database-schema/"/>
+  </url>
+  <url>
+    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/database-er/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/database-er/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/database-er/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/database-er/"/>
   </url>
   <url>
     <loc>https://pyorchestrator.github.io/PyOrchestrator/ru/database-er/</loc>
@@ -213,6 +166,16 @@
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/database-er/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/database-er/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/database-er/"/>
+  </url>
+  <url>
+    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/api-reference/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/api-reference/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/api-reference/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/api-reference/"/>
   </url>
   <url>
     <loc>https://pyorchestrator.github.io/PyOrchestrator/ru/api-reference/</loc>
@@ -221,6 +184,16 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/api-reference/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/api-reference/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/api-reference/"/>
+  </url>
+  <url>
+    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/deployment/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/deployment/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/deployment/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/deployment/"/>
   </url>
   <url>
     <loc>https://pyorchestrator.github.io/PyOrchestrator/ru/deployment/</loc>
@@ -229,6 +202,16 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/deployment/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/deployment/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/deployment/"/>
+  </url>
+  <url>
+    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/configuration/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/configuration/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/configuration/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/configuration/"/>
   </url>
   <url>
     <loc>https://pyorchestrator.github.io/PyOrchestrator/ru/configuration/</loc>
@@ -237,6 +220,16 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/configuration/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/configuration/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/configuration/"/>
+  </url>
+  <url>
+    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/security/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/security/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/security/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/security/"/>
   </url>
   <url>
     <loc>https://pyorchestrator.github.io/PyOrchestrator/ru/security/</loc>
@@ -245,6 +238,16 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/security/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/security/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/security/"/>
+  </url>
+  <url>
+    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/roadmap/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/roadmap/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/roadmap/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/roadmap/"/>
   </url>
   <url>
     <loc>https://pyorchestrator.github.io/PyOrchestrator/ru/roadmap/</loc>
@@ -253,6 +256,16 @@
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/roadmap/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/roadmap/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/roadmap/"/>
+  </url>
+  <url>
+    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/troubleshooting/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/troubleshooting/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/troubleshooting/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/troubleshooting/"/>
   </url>
   <url>
     <loc>https://pyorchestrator.github.io/PyOrchestrator/ru/troubleshooting/</loc>
@@ -261,6 +274,16 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/troubleshooting/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/troubleshooting/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/troubleshooting/"/>
+  </url>
+  <url>
+    <loc>https://pyorchestrator.github.io/PyOrchestrator/en/support/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/support/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/support/"/>
   </url>
   <url>
     <loc>https://pyorchestrator.github.io/PyOrchestrator/ru/support/</loc>
@@ -269,5 +292,6 @@
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pyorchestrator.github.io/PyOrchestrator/en/support/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pyorchestrator.github.io/PyOrchestrator/ru/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pyorchestrator.github.io/PyOrchestrator/en/support/"/>
   </url>
 </urlset>
