@@ -1,6 +1,8 @@
 ---
 layout: default
+title: "SCADA/CMS для Python-скриптов и ботов"
 description: "Open-source SCADA/CMS для создания, планирования, запуска и мониторинга изолированных Python-скриптов и ботов в Docker Compose — Runtime sandbox, RBAC и MCP для AI-агентов."
+hide_title: true
 ---
 
 <img src="{{ '/assets/banner.png' | relative_url }}" alt="PyOrchestrator" class="banner" width="1280" height="640" loading="eager">
