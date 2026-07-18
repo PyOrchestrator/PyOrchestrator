@@ -1,4 +1,8 @@
-# PyOrchestrator — Database ER Model
+---
+layout: default
+title: "ER-диаграмма БД"
+description: "ER-диаграмма схемы PostgreSQL PyOrchestrator — таблицы, ключи и связи."
+---
 
 PostgreSQL 16. All tables use UUID primary keys unless noted. Timestamps: `created_at`, `updated_at` on every entity.
 

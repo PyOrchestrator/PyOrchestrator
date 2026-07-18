@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Control Panel
-description: PyOrchestrator web interface overview
+title: "Control plane"
+description: "Overview of the PyOrchestrator web UI — scripts, schedules, dashboards, secrets, backups, and system settings."
 ---
 
 ## Pages

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Устранение неполадок
-description: Частые проблемы и диагностика
+title: "Устранение неполадок"
+description: "Типичные проблемы PyOrchestrator: запуск контейнеров, Redis, MinIO, runtime sandbox и вход в систему."
 ---
 
 ## Контейнеры не стартуют

@@ -1,5 +1,8 @@
 ---
 permalink: /
+robots: noindex, follow
+title: PyOrchestrator Documentation
+description: "Choose language / Выберите язык — PyOrchestrator docs in English and Russian."
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -7,6 +10,13 @@ permalink: /
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PyOrchestrator — Documentation</title>
+  <meta name="description" content="{{ page.description }}">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="{{ '/en/' | absolute_url }}">
+  <link rel="alternate" hreflang="en" href="{{ '/en/' | absolute_url }}">
+  <link rel="alternate" hreflang="ru" href="{{ '/ru/' | absolute_url }}">
+  <link rel="alternate" hreflang="x-default" href="{{ '/en/' | absolute_url }}">
+  <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <script>
     (function () {

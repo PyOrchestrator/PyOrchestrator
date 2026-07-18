@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Runtime и sandbox
-description: Модель изоляции и жизненный цикл выполнения скриптов
+title: "Runtime и sandbox"
+description: "Как PyOrchestrator изолирует Python-скрипты: subprocess sandbox, venv, rlimits, очередь Redis и live-логи."
 ---
 
 ## Принцип

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: API Reference
-description: REST API PyOrchestrator - main endpoints
+title: "API reference"
+description: "REST API endpoints for PyOrchestrator: authentication, scripts, runs, schedules, webhooks, secrets, and system health."
 ---
 
 Base URL: `http://localhost:8000/api/v1`

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Архитектура
-description: Топология сервисов, sandbox-модель, потоки данных и безопасность
+title: "Архитектура"
+description: "Топология сервисов PyOrchestrator: FastAPI control plane, Runtime sandbox, планировщик, PostgreSQL, Redis, MinIO и стек наблюдаемости."
 ---
 
 ## Концепция

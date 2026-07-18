@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Схема данных
-description: Модель PostgreSQL — таблицы и связи
+title: "Схема данных"
+description: "Модель PostgreSQL PyOrchestrator: пользователи, скрипты, runs, расписания, секреты, бэкапы и связанные таблицы."
 ---
 
 PostgreSQL 16. Первичные ключи UUID. Метки времени `created_at` / `updated_at` на сущностях.

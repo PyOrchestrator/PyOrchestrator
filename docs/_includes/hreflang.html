@@ -1,0 +1,12 @@
+{%- comment -%} Alternate language URLs for search engines {%- endcomment -%}
+{%- if page.lang -%}
+{%- assign current_lang = page.lang -%}
+{%- assign path_no_ext = page.path | replace: '.md', '' | replace: '.html', '' -%}
+{%- assign lang_prefix = current_lang | append: '/' -%}
+{%- assign page_slug = path_no_ext | replace: lang_prefix, '' -%}
+{%- if page_slug == 'index' -%}{%- assign page_slug = '' -%}{%- endif -%}
+{%- for lang in site.data.languages -%}
+  <link rel="alternate" hreflang="{{ lang.locale }}" href="{% include lhref.html lang=lang.code slug=page_slug %}" />
+{%- endfor -%}
+  <link rel="alternate" hreflang="x-default" href="{% include lhref.html lang='en' slug=page_slug %}" />
+{%- endif -%}

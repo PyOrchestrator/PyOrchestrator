@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Runtime and sandbox
-description: Isolation model and script execution lifecycle
+title: "Runtime & sandbox"
+description: "How PyOrchestrator isolates Python scripts: subprocess sandboxes, venv, rlimits, Redis queue, and live logs."
 ---
 
 ## Principle

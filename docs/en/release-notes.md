@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Release Notes
-description: PyOrchestrator release history
+title: "Release notes"
+description: "PyOrchestrator release history with highlights, fixes, and upgrade notes for each version."
 ---
 
 ## v0.1.13 - updating backend dependencies and synchronizing documentation

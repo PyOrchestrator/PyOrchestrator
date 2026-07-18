@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Data schema
-description: PostgreSQL model - tables and relationships
+title: "Database schema"
+description: "PostgreSQL data model for PyOrchestrator: users, scripts, runs, schedules, secrets, backups, and related tables."
 ---
 
 PostgreSQL 16. Primary keys UUID. `created_at` / `updated_at` timestamps on entities.

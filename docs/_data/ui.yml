@@ -16,6 +16,8 @@ en:
   issues_all: All issues →
   issues_empty: No open issues
   issues_open_github: Open on GitHub
+  seo_home_title: PyOrchestrator
+  seo_home_description: Open-source SCADA/CMS to create, schedule, run, and monitor isolated Python scripts and bots in Docker Compose — with Runtime sandboxes, RBAC, and MCP for AI agents.
 
 ru:
   tagline: SCADA / CMS
@@ -35,3 +37,5 @@ ru:
   issues_all: Все issues →
   issues_empty: Нет открытых issues
   issues_open_github: Открыть на GitHub
+  seo_home_title: PyOrchestrator
+  seo_home_description: Open-source SCADA/CMS для создания, планирования, запуска и мониторинга изолированных Python-скриптов и ботов в Docker Compose — Runtime sandbox, RBAC и MCP для AI-агентов.

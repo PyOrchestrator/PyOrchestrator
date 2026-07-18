@@ -1,5 +1,6 @@
 ---
 layout: default
+description: "Open-source SCADA/CMS to create, schedule, run, and monitor isolated Python scripts and bots in Docker Compose — with Runtime sandboxes, RBAC, and MCP for AI agents."
 ---
 
 <img src="{{ '/assets/banner.png' | relative_url }}" alt="PyOrchestrator" class="banner" width="1280" height="640" loading="eager">

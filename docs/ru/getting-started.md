@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Быстрый старт
-description: Установка PyOrchestrator через Docker Compose и первый запуск
+title: "Быстрый старт"
+description: "Установите PyOrchestrator через Docker Compose за несколько минут: clone, .env, запуск стека и вход в панель управления."
 ---
 
 ## Требования

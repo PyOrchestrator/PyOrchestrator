@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Конфигурация
-description: Переменные окружения и настройка сервисов
+title: "Конфигурация"
+description: "Переменные окружения и настройки PyOrchestrator: backend, runtime, MinIO, Grafana и OTA-обновления."
 ---
 
 Все переменные — в `.env` (см. `.env.example`).

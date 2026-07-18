@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Architecture
-description: Service topology, sandbox model, data flows and security
+title: "Architecture"
+description: "PyOrchestrator service topology: FastAPI control plane, Runtime sandboxes, scheduler, PostgreSQL, Redis, MinIO, and observability stack."
 ---
 
 ## Concept

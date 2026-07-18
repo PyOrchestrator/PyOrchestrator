@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Roadmap
-description: PyOrchestrator development plan - MVP and Production phases
+title: "Roadmap"
+description: "PyOrchestrator product roadmap — completed MVP phases and planned Production features."
 ---
 
 ## Status v0.1.13

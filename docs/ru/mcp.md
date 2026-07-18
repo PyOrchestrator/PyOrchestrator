@@ -1,7 +1,7 @@
 ---
 layout: default
-title: MCP для AI-агентов
-description: Model Context Protocol server — интеграция с Cursor и автоматизация платформы
+title: "MCP для AI-агентов"
+description: "MCP-сервер PyOrchestrator для Cursor и других AI-агентов: скрипты, запуски, логи, расписания и секреты."
 ---
 
 PyOrchestrator поставляет **MCP-сервер** (`mcp/`) для управления платформой из AI-агентов (Cursor, Claude, собственные боты).

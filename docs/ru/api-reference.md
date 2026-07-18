@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Справочник API
-description: REST API PyOrchestrator — основные endpoints
+title: "Справочник API"
+description: "REST API PyOrchestrator: аутентификация, скрипты, runs, расписания, вебхуки, секреты и health-check."
 ---
 
 Базовый URL: `http://localhost:8000/api/v1`

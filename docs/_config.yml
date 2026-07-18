@@ -1,8 +1,10 @@
 title: PyOrchestrator
-description: SCADA/CMS platform for isolated Python scripts and bots in Docker Compose
+tagline: SCADA/CMS for isolated Python scripts and bots
+description: Open-source SCADA/CMS platform to create, schedule, run, and monitor isolated Python scripts and bots — Docker Compose, Runtime sandboxes, RBAC, and MCP for AI agents.
 url: https://pyorchestrator.github.io
 baseurl: /PyOrchestrator
 repository: PyOrchestrator/PyOrchestrator
+logo: /assets/icon-512.png
 
 markdown: GFM
 permalink: pretty
@@ -25,15 +27,26 @@ exclude:
 
 defaults:
   - scope:
+      path: ""
+    values:
+      image: /assets/banner.png
+  - scope:
       path: "en"
       type: "pages"
     values:
       lang: en
+      locale: en_US
   - scope:
       path: "ru"
       type: "pages"
     values:
       lang: ru
+      locale: ru_RU
+
+social:
+  name: PyOrchestrator
+  links:
+    - https://github.com/PyOrchestrator/PyOrchestrator
 
 github_org: PyOrchestrator
 github_repo: PyOrchestrator

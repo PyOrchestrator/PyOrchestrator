@@ -1,4 +1,8 @@
-# PyOrchestrator — Database ER Model
+---
+layout: default
+title: "Database ER diagram"
+description: "Entity-relationship diagram of the PyOrchestrator PostgreSQL schema — tables, keys, and relationships."
+---
 
 PostgreSQL 16. All tables use UUID primary keys unless noted. Timestamps: `created_at`, `updated_at` on every entity.
 

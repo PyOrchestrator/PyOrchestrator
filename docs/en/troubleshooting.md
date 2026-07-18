@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Troubleshooting
-description: Frequent problems and diagnostics
+title: "Troubleshooting"
+description: "Fix common PyOrchestrator issues: container startup, Redis, MinIO, runtime sandboxes, and login problems."
 ---
 
 ## Containers do not start

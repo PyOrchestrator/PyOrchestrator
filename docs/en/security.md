@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Security
-description: Authentication, RBAC, secrets and recommendations for production
+title: "Security"
+description: "PyOrchestrator security model: JWT auth, RBAC roles, encrypted secrets vault, and production hardening checklist."
 ---
 
 ## Authentication

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Deployment
-description: Development and production via Docker Compose
+title: "Deployment"
+description: "Deploy PyOrchestrator for development or production with Docker Compose, including optional observability services."
 ---
 
 ## Development (default)

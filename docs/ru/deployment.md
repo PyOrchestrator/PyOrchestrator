@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Развёртывание
-description: Разработка и production через Docker Compose
+title: "Развёртывание"
+description: "Развёртывание PyOrchestrator для разработки и production через Docker Compose, включая опциональную наблюдаемость."
 ---
 
 ## Разработка (по умолчанию)

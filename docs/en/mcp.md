@@ -1,7 +1,7 @@
 ---
 layout: default
-title: MCP for AI agents
-description: Model Context Protocol server - integration with Cursor and platform automation
+title: "MCP for AI agents"
+description: "Use the PyOrchestrator MCP server with Cursor and other AI agents to list scripts, run jobs, read logs, and manage schedules."
 ---
 
 PyOrchestrator provides an **MCP server** (`mcp/`) to manage the platform of AI agents (Cursor, Claude, custom bots).

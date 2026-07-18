@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Дорожная карта
-description: План развития PyOrchestrator — фазы MVP и Production
+title: "Дорожная карта"
+description: "Дорожная карта PyOrchestrator — завершённые фазы MVP и планы Production."
 ---
 
 ## Статус v0.1.13

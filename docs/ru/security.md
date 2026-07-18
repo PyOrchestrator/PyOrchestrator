@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Безопасность
-description: Аутентификация, RBAC, секреты и рекомендации для production
+title: "Безопасность"
+description: "Модель безопасности PyOrchestrator: JWT, RBAC, шифрованный vault секретов и чеклист для production."
 ---
 
 ## Аутентификация

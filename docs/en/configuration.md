@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Configuration
-description: Environment variables and service settings
+title: "Configuration"
+description: "Environment variables and settings for PyOrchestrator backend, runtime, MinIO, Grafana, and OTA updates."
 ---
 
 All variables are in `.env` (see `.env.example`).

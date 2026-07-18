@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Quick start
-description: Installing PyOrchestrator via Docker Compose and launching it for the first time
+title: "Quick start"
+description: "Install PyOrchestrator with Docker Compose in minutes: clone, configure .env, start the stack, and sign in to the control plane."
 ---
 
 ## Requirements
