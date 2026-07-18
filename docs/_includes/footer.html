@@ -1,7 +1,11 @@
+{%- assign current_lang = page.lang | default: 'en' -%}
+{%- assign ui = site.data.ui[current_lang] -%}
+
 <footer class="site-footer">
   <p>
     PyOrchestrator · Apache License 2.0 ·
-    <a href="{{ '/getting-started/' | relative_url }}">Документация</a> ·
-    <a href="https://github.com/{{ site.github_org }}/{{ site.github_repo }}" target="_blank" rel="noopener">GitHub</a>
+    <a href="{% include lhref.html slug='getting-started' %}">{{ ui.footer_docs }}</a> ·
+    <a href="{% if current_lang == 'ru' %}https://github.com/{{ site.github_org }}/{{ site.github_repo }}/wiki/ru-Home{% else %}https://github.com/{{ site.github_org }}/{{ site.github_repo }}/wiki/en-Home{% endif %}" target="_blank" rel="noopener">{{ ui.footer_wiki }}</a> ·
+    <a href="https://github.com/{{ site.github_org }}/{{ site.github_repo }}" target="_blank" rel="noopener">{{ ui.github }}</a>
   </p>
 </footer>

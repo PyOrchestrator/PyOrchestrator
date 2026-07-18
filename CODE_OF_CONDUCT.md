@@ -1,3 +1,5 @@
+**Language:** **English** · [Русский](CODE_OF_CONDUCT.ru.md)
+
 # Contributor Covenant Code of Conduct
 
 ## Our Pledge

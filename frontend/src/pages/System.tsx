@@ -43,9 +43,9 @@ function formatUptime(seconds: number): string {
   return `${m}m`;
 }
 
-function formatServiceStatus(status: string): string {
+function formatServiceStatus(status: string, configuredLabel: string): string {
   if (status === "ok") return "OK";
-  if (status === "configured") return "настроен";
+  if (status === "configured") return configuredLabel;
   if (status.startsWith("error:")) return status.replace(/^error:\s*/, "");
   return status;
 }
@@ -214,7 +214,7 @@ export default function SystemPage() {
                 {t("system.cards.storage.service")}
               </p>
               <p className="mt-1 font-mono text-sm text-foreground">
-                {services.minio ? formatServiceStatus(services.minio) : "—"}
+                {services.minio ? formatServiceStatus(services.minio, t("system.status.configured")) : "—"}
               </p>
             </div>
             {info.config.minio_console_url ? (
@@ -248,7 +248,7 @@ export default function SystemPage() {
                 className="flex items-center justify-between gap-3 rounded-xl bg-surface-muted/60 px-4 py-3 ring-1 ring-ring-line"
               >
                 <span className="font-mono text-xs font-semibold uppercase tracking-wide text-muted">{name}</span>
-                <Badge label={formatServiceStatus(status)} tone={serviceTone(status)} live={status === "ok"} />
+                <Badge label={formatServiceStatus(status, t("system.status.configured"))} tone={serviceTone(status)} live={status === "ok"} />
               </div>
             ))}
           </div>

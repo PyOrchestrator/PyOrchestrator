@@ -1,0 +1,6 @@
+- code: en
+  label: English
+  locale: en
+- code: ru
+  label: Русский
+  locale: ru

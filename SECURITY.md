@@ -1,30 +1,32 @@
-# Политика безопасности
+**Language:** **English** · [Русский](SECURITY.ru.md)
 
-## Поддерживаемые версии
+# Security Policy
 
-| Версия | Поддержка |
-|--------|-----------|
-| 0.1.x  | ✅ Активная |
+## Supported versions
 
-## Сообщить об уязвимости
+| Version | Support |
+|---------|---------|
+| 0.1.x   | ✅ Active |
 
-**Не создавайте публичный Issue** для уязвимостей безопасности.
+## Reporting a vulnerability
 
-Напишите на **security@pyorchestrator.org** (или создайте приватный Security Advisory в GitHub, когда репозиторий будет опубликован в организации).
+**Do not open a public Issue** for security vulnerabilities.
 
-Укажите:
+Email **security@pyorchestrator.org** (or create a private GitHub Security Advisory).
 
-- Описание уязвимости и impact
-- Шаги воспроизведения
-- Версия PyOrchestrator / commit hash
-- Предложение по исправлению (если есть)
+Include:
 
-Мы постараемся ответить в течение **72 часов** и выпустить патч для критичных проблем в разумные сроки.
+- Description and impact
+- Steps to reproduce
+- PyOrchestrator version / commit hash
+- Suggested fix (if any)
 
-## Рекомендации для production
+We aim to respond within **72 hours** and ship patches for critical issues in a reasonable timeframe.
 
-- Смените пароль admin и все секреты в `.env` (`SECRET_KEY`, `SECRET_MASTER_KEY`, `INTERNAL_API_KEY`)
-- Не публикуйте порты PostgreSQL, Redis, MinIO наружу
-- Используйте TLS для UI и API
-- Ограничьте сетевой egress для runtime при запуске untrusted-скриптов
-- Регулярно обновляйте Docker-образы базовых сервисов
+## Production recommendations
+
+- Change the admin password and all secrets in `.env` (`SECRET_KEY`, `SECRET_MASTER_KEY`, `INTERNAL_API_KEY`)
+- Do not expose PostgreSQL, Redis, or MinIO ports publicly
+- Use TLS for UI and API
+- Restrict network egress for runtime when running untrusted scripts
+- Keep base Docker images up to date

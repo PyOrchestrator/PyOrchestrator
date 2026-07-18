@@ -1,0 +1,79 @@
+---
+layout: default
+title: Быстрый старт
+description: Установка PyOrchestrator через Docker Compose и первый запуск
+---
+
+## Требования
+
+- Docker 24+ и Docker Compose v2
+- 4 GB RAM (рекомендуется 8 GB с observability-стеком)
+- Linux или macOS (cgroups для runtime — опционально)
+
+## Установка
+
+```bash
+git clone https://github.com/PyOrchestrator/PyOrchestrator.git
+cd PyOrchestrator
+git checkout v0.1.13   # или последний тег: git describe --tags --abbrev=0
+cp .env.example .env
+docker compose up --build
+```
+
+Первый запуск занимает несколько минут: сборка образов, инициализация PostgreSQL, MinIO, seed демо-скриптов.
+
+Актуальная версия: [**v0.1.13**](https://github.com/PyOrchestrator/PyOrchestrator/releases/tag/v0.1.13) — [заметки о выпуске]({{ '/ru/release-notes/' | relative_url }}).
+
+## Вход в систему
+
+| Поле | Значение по умолчанию |
+|------|------------------------|
+| Email | `admin@pyorchestrator.local` |
+| Пароль | `admin` |
+
+После входа откройте **Скрипты** — будут загружены демо-объекты (Weather, Crypto, DAP API Poster и др.).
+
+## Первый запуск скрипта
+
+1. Откройте любой скрипт → **Редактор**
+2. Нажмите **Run** — внизу появится live-вывод
+3. **Stop** — остановка sandbox через Redis control channel
+
+## Сервисы и порты
+
+| Сервис | Порт | Назначение |
+|--------|------|------------|
+| frontend | 5173 | React UI (dev) |
+| backend | 8000 | REST API |
+| postgres | 5432 | Метаданные |
+| redis | 6379 | Очередь jobs |
+| minio | 9000 (+ 9001 при `MINIO_CONSOLE_ENABLED=true`) | S3 API / опциональная Console |
+| grafana | 3000 | Дашборды |
+| prometheus | 9090 | Метрики |
+| mcp | 8010 | MCP HTTP |
+
+Порты настраиваются в `.env` — см. [Конфигурация]({{ '/ru/configuration/' | relative_url }}).
+
+## Production
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+```
+
+Подробнее: [Развёртывание]({{ '/ru/deployment/' | relative_url }}).
+
+## MCP для Cursor
+
+```bash
+cd mcp && pip install -e .
+```
+
+Добавьте в Cursor Settings → MCP конфиг из `mcp/cursor-mcp.example.json`.
+
+Подробнее: [MCP]({{ '/ru/mcp/' | relative_url }}).
+
+## Дальше
+
+- [Архитектура]({{ '/ru/architecture/' | relative_url }})
+- [Панель управления]({{ '/ru/control-plane/' | relative_url }})
+- [Безопасность]({{ '/ru/security/' | relative_url }})

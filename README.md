@@ -1,3 +1,5 @@
+**Language:** **English** · [Русский](README.ru.md)
+
 # PyOrchestrator
 
 ![PyOrchestrator](docs/assets/banner.png)
@@ -5,13 +7,13 @@
 [![CI](https://github.com/PyOrchestrator/PyOrchestrator/actions/workflows/ci.yml/badge.svg)](https://github.com/PyOrchestrator/PyOrchestrator/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/PyOrchestrator/PyOrchestrator?label=release&color=22d3ee)](https://github.com/PyOrchestrator/PyOrchestrator/releases/latest)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-22d3ee)](https://pyorchestrator.github.io/PyOrchestrator/)
+[![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-22d3ee)](https://pyorchestrator.github.io/PyOrchestrator/en/)
 
 **SCADA/CMS platform** for creating, scheduling, running, and monitoring thousands of isolated Python scripts and bots — inside a fixed Docker Compose stack.
 
 > One Runtime Engine. Many sandboxes. Zero per-script containers.
 
-**Документация:** https://pyorchestrator.github.io/PyOrchestrator/
+**Documentation:** https://pyorchestrator.github.io/PyOrchestrator/en/ · [Русский](https://pyorchestrator.github.io/PyOrchestrator/ru/)
 
 ## Architecture
 
@@ -27,7 +29,7 @@
 | `prometheus` + `grafana` + `loki` | Metrics & logs |
 | `mcp` | MCP server for AI agents (port 8010) |
 
-See [Architecture](https://pyorchestrator.github.io/PyOrchestrator/architecture/) for full design.
+See [Architecture](https://pyorchestrator.github.io/PyOrchestrator/en/architecture/) for full design.
 
 ### AI agents (MCP)
 
@@ -56,6 +58,8 @@ docker compose up --build
 
 **Default login:** `admin@pyorchestrator.local` / `admin` — change password and `.env` secrets before production.
 
+**UI languages:** English (default) and Russian — switcher in the sidebar header and Settings.
+
 ## Project Structure
 
 ```
@@ -75,8 +79,9 @@ PyOrchestrator/
 ├── scheduler/         # APScheduler service
 ├── mcp/               # MCP server for AI agents
 ├── infrastructure/    # Prometheus, Grafana, Loki configs
-├── docs/              # Documentation (GitHub Pages / Jekyll)
-├── wiki/              # Copy for GitHub Wiki
+├── docs/              # Documentation (GitHub Pages / Jekyll) — en/ + ru/
+├── wiki/              # Copy for GitHub Wiki — en/ + ru/
+├── releases/          # Bilingual GitHub Release notes
 ├── docker-compose.yml
 └── docker-compose.prod.yml
 ```
@@ -91,20 +96,20 @@ PyOrchestrator/
 
 ## Documentation
 
-| Topic | Link |
-|-------|------|
-| Release notes | [release-notes](https://pyorchestrator.github.io/PyOrchestrator/release-notes/) |
-| Quick start | [getting-started](https://pyorchestrator.github.io/PyOrchestrator/getting-started/) |
-| Architecture | [architecture](https://pyorchestrator.github.io/PyOrchestrator/architecture/) |
-| Control Plane UI | [control-plane](https://pyorchestrator.github.io/PyOrchestrator/control-plane/) |
-| Runtime & sandbox | [runtime](https://pyorchestrator.github.io/PyOrchestrator/runtime/) |
-| MCP for AI agents | [mcp](https://pyorchestrator.github.io/PyOrchestrator/mcp/) |
-| API reference | [api-reference](https://pyorchestrator.github.io/PyOrchestrator/api-reference/) |
-| Deployment | [deployment](https://pyorchestrator.github.io/PyOrchestrator/deployment/) |
-| Configuration | [configuration](https://pyorchestrator.github.io/PyOrchestrator/configuration/) |
-| Security | [security](https://pyorchestrator.github.io/PyOrchestrator/security/) |
-| Roadmap | [roadmap](https://pyorchestrator.github.io/PyOrchestrator/roadmap/) |
-| Troubleshooting | [troubleshooting](https://pyorchestrator.github.io/PyOrchestrator/troubleshooting/) |
+| Topic | English | Русский |
+|-------|---------|---------|
+| Release notes | [en](https://pyorchestrator.github.io/PyOrchestrator/en/release-notes/) | [ru](https://pyorchestrator.github.io/PyOrchestrator/ru/release-notes/) |
+| Quick start | [en](https://pyorchestrator.github.io/PyOrchestrator/en/getting-started/) | [ru](https://pyorchestrator.github.io/PyOrchestrator/ru/getting-started/) |
+| Architecture | [en](https://pyorchestrator.github.io/PyOrchestrator/en/architecture/) | [ru](https://pyorchestrator.github.io/PyOrchestrator/ru/architecture/) |
+| Control Plane UI | [en](https://pyorchestrator.github.io/PyOrchestrator/en/control-plane/) | [ru](https://pyorchestrator.github.io/PyOrchestrator/ru/control-plane/) |
+| Runtime & sandbox | [en](https://pyorchestrator.github.io/PyOrchestrator/en/runtime/) | [ru](https://pyorchestrator.github.io/PyOrchestrator/ru/runtime/) |
+| MCP for AI agents | [en](https://pyorchestrator.github.io/PyOrchestrator/en/mcp/) | [ru](https://pyorchestrator.github.io/PyOrchestrator/ru/mcp/) |
+| API reference | [en](https://pyorchestrator.github.io/PyOrchestrator/en/api-reference/) | [ru](https://pyorchestrator.github.io/PyOrchestrator/ru/api-reference/) |
+| Deployment | [en](https://pyorchestrator.github.io/PyOrchestrator/en/deployment/) | [ru](https://pyorchestrator.github.io/PyOrchestrator/ru/deployment/) |
+| Configuration | [en](https://pyorchestrator.github.io/PyOrchestrator/en/configuration/) | [ru](https://pyorchestrator.github.io/PyOrchestrator/ru/configuration/) |
+| Security | [en](https://pyorchestrator.github.io/PyOrchestrator/en/security/) | [ru](https://pyorchestrator.github.io/PyOrchestrator/ru/security/) |
+| Roadmap | [en](https://pyorchestrator.github.io/PyOrchestrator/en/roadmap/) | [ru](https://pyorchestrator.github.io/PyOrchestrator/ru/roadmap/) |
+| Troubleshooting | [en](https://pyorchestrator.github.io/PyOrchestrator/en/troubleshooting/) | [ru](https://pyorchestrator.github.io/PyOrchestrator/ru/troubleshooting/) |
 
 ## Development Status
 
@@ -129,7 +134,7 @@ PyOrchestrator/
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). Security issues: [SECURITY.md](SECURITY.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md) · [Русский](CONTRIBUTING.ru.md). Security issues: [SECURITY.md](SECURITY.md) · [Русский](SECURITY.ru.md).
 
 ## License
 

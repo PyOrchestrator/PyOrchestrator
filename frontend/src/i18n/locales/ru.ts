@@ -459,6 +459,10 @@ export const ru: Messages = {
   system: {
     title: "Информация о системе",
     subtitle: "Состояние платформы и инфраструктура",
+    status: {
+      ok: "OK",
+      configured: "настроен",
+    },
     cards: {
       application: {
         title: "Приложение",

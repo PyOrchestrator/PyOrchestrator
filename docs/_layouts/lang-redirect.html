@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Redirecting…</title>
+  <script>
+    (function () {
+      var supported = ['en', 'ru'];
+      var saved = localStorage.getItem('pyorch-docs-lang');
+      var browser = (navigator.language || 'en').slice(0, 2).toLowerCase();
+      var lang = supported.indexOf(saved) >= 0 ? saved : (browser === 'ru' ? 'ru' : 'en');
+      var base = '{{ "/" | relative_url }}';
+      var slug = '{{ page.slug_path }}';
+      var target = slug ? base + lang + '/' + slug + '/' : base + lang + '/';
+      window.location.replace(target);
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting…</p>
+</body>
+</html>

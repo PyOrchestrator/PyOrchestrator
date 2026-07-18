@@ -2,17 +2,31 @@ document.addEventListener('DOMContentLoaded', function () {
   var toggle = document.querySelector('.menu-toggle');
   var overlay = document.querySelector('.sidebar-overlay');
   var body = document.body;
+  var menuOpen = body.getAttribute('data-menu-open') || 'Open menu';
+  var menuClose = body.getAttribute('data-menu-close') || 'Close menu';
+  var issuesEmpty = body.getAttribute('data-issues-empty') || 'No open issues';
+  var issuesOpenGithub = body.getAttribute('data-issues-open-github') || 'Open on GitHub';
+
+  document.querySelectorAll('.lang-switcher a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      try {
+        var href = link.getAttribute('href') || '';
+        var match = href.match(/\/(en|ru)\//);
+        if (match) localStorage.setItem('pyorch-docs-lang', match[1]);
+      } catch (e) { /* ignore */ }
+    });
+  });
 
   function closeNav() {
     body.classList.remove('nav-open');
     if (toggle) toggle.setAttribute('aria-expanded', 'false');
-    if (toggle) toggle.setAttribute('aria-label', 'Открыть меню');
+    if (toggle) toggle.setAttribute('aria-label', menuOpen);
   }
 
   function openNav() {
     body.classList.add('nav-open');
     if (toggle) toggle.setAttribute('aria-expanded', 'true');
-    if (toggle) toggle.setAttribute('aria-label', 'Закрыть меню');
+    if (toggle) toggle.setAttribute('aria-label', menuClose);
   }
 
   if (toggle) {
@@ -62,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return !item.pull_request;
           });
           if (issues.length === 0) {
-            list.innerHTML = '<li class="sidebar-issues-empty">Нет открытых issues</li>';
+            list.innerHTML = '<li class="sidebar-issues-empty">' + issuesEmpty + '</li>';
             return;
           }
           list.innerHTML = issues.map(function (issue) {
@@ -80,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(function () {
           list.innerHTML =
             '<li class="sidebar-issues-empty"><a href="https://github.com/' + repo +
-            '/issues" target="_blank" rel="noopener">Открыть на GitHub</a></li>';
+            '/issues" target="_blank" rel="noopener">' + issuesOpenGithub + '</a></li>';
         });
     }
   }

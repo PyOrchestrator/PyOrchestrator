@@ -1,3 +1,5 @@
+**Language:** **English** · [Русский](README.ru.md)
+
 # PyOrchestrator MCP Server
 
 MCP (Model Context Protocol) server so AI agents (Cursor, Claude, custom bots) can manage PyOrchestrator via tools.

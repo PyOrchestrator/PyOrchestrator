@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="{{ page.lang | default: 'en' }}">
 <head>
   {% include head.html %}
 </head>
-<body>
+<body data-menu-open="{{ site.data.ui[page.lang | default: 'en'].menu_open }}" data-menu-close="{{ site.data.ui[page.lang | default: 'en'].menu_close }}" data-issues-empty="{{ site.data.ui[page.lang | default: 'en'].issues_empty }}" data-issues-open-github="{{ site.data.ui[page.lang | default: 'en'].issues_open_github }}">
   <div class="site">
     {% include mobile-header.html %}
     {% include sidebar.html %}

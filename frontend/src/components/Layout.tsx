@@ -1,4 +1,5 @@
 import ThemeToggle from "@/components/ui/ThemeToggle";
+import LanguageToggle from "@/components/ui/LanguageToggle";
 import UpdateBanner from "@/components/UpdateBanner";
 import { IconButton } from "@/components/ui/Button";
 import { useAuth } from "@/context/AuthContext";
@@ -118,7 +119,10 @@ export default function Layout() {
             <p className="truncate text-sm font-bold tracking-tight text-foreground">PyOrchestrator</p>
             <p className="truncate text-xs text-faint">{t("layout.controlPlane")}</p>
           </div>
-          <ThemeToggle />
+          <div className="flex shrink-0 items-center gap-1">
+            <LanguageToggle />
+            <ThemeToggle />
+          </div>
         </div>
 
         <nav className="flex-1 overflow-y-auto px-3 py-4">
@@ -169,7 +173,10 @@ export default function Layout() {
               </div>
               <p className="text-sm font-bold text-foreground">PyOrchestrator</p>
             </div>
-            <ThemeToggle />
+            <div className="flex shrink-0 items-center gap-1">
+              <LanguageToggle />
+              <ThemeToggle />
+            </div>
           </div>
           <nav className="flex items-center gap-2 overflow-x-auto px-3 pb-3">
             {navSections.map((section, sectionIndex) => {

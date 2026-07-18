@@ -1,0 +1,37 @@
+en:
+  tagline: SCADA / CMS
+  resources: Resources
+  documentation: Documentation
+  github: GitHub
+  menu_open: Open menu
+  menu_close: Close menu
+  language: Language
+  footer_docs: Documentation
+  footer_wiki: Wiki
+  redirecting: Redirecting…
+  redirect_docs: documentation
+  choose_language: Choose language
+  issues: Issues
+  issues_loading: Loading…
+  issues_all: All issues →
+  issues_empty: No open issues
+  issues_open_github: Open on GitHub
+
+ru:
+  tagline: SCADA / CMS
+  resources: Ресурсы
+  documentation: Документация
+  github: GitHub
+  menu_open: Открыть меню
+  menu_close: Закрыть меню
+  language: Язык
+  footer_docs: Документация
+  footer_wiki: Wiki
+  redirecting: Перенаправление…
+  redirect_docs: документацию
+  choose_language: Выберите язык
+  issues: Issues
+  issues_loading: Загрузка…
+  issues_all: Все issues →
+  issues_empty: Нет открытых issues
+  issues_open_github: Открыть на GitHub

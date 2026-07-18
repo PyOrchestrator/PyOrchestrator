@@ -457,6 +457,10 @@ export const en = {
   system: {
     title: "System information",
     subtitle: "Platform status & infrastructure",
+    status: {
+      ok: "OK",
+      configured: "configured",
+    },
     cards: {
       application: {
         title: "Application",
